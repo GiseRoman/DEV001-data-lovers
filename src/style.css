@@ -1,0 +1,21 @@
+html{
+    height: 100%;
+}
+
+.menu{
+    max-width: 40px;
+    margin-right: 15px;
+}
+
+.logo{
+    float: left;
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 40px;
+}
+
+ul{
+    float: right;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
