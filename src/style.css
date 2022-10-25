@@ -1,0 +1,21 @@
+footer{
+    display: inline;
+    position: relative;
+    width: 1237px;
+    height: 30px;
+    background-color:rgb(213, 101, 244);
+    margin-top: 400px;
+    float: left;
+    margin-left: 45px;
+    }
+    p17{
+        display: inline-block;
+        font-size: 15px;
+        background-color:transparent;
+        font-family: Arial;
+        color:white;
+        margin-top: 9px;
+        margin-left: 15px;
+        }
+        
+       
