@@ -8,6 +8,4 @@ export const anotherExample = () => {
   return 'OMG';
 };
 
-export const datosGenerales = films.filter(film => film.title)
 
-  console.log(datosGenerales)
