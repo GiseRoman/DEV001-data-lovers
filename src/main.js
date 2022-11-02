@@ -9,4 +9,3 @@ const container = document.getElementById('container');
 data.films.forEach(film =>{
     container.insertAdjacentHTML('beforeend', `<div class="cajitas">  <img class="posters" src="${film.poster}" width="157" height="202"></img><p class="titulos">${film.title}</p></div>`)
     });
-        
