@@ -38,12 +38,11 @@ footer{
 
 p{
         display: inline-block;
-        font-size: 25px;
-        background-color:transparent;
+        padding: 5px 5px;
+        margin: 5px;
+        font-size: 30;
         font-family: 'Fuzzy Bubbles', cursive;
-        color:rgb(1, 1, 1);
-        margin-top: 9px;
-        margin-left: 15px;
+        background-color: #76C7F5;
         }
 
 .imagen{
@@ -52,4 +51,24 @@ p{
     float:right;
     margin-right: 15px;
     margin-left:430px;
+}
+
+.cosa{
+    color: aquamarine;
+    text-decoration: dotted;
+    width: 100px;
+    height: 50px;
+    right: 10px;
+    top: 200px;
+}
+
+.container{
+    width: 177px;
+    height: 262px;
+    padding: 5px 5px;
+    margin: 5px;
+    font-size: 46px 25px;
+    vertical-align: text-bottom;
+    box-sizing: 177px 41px;
+    color:rgb(1, 1, 1);
 }
