@@ -64,33 +64,53 @@ p{
         background-color: #76C7F5;
         }
 
-/* .panel{
+#peliculas{
     display: none;
 }
 
-.show {
-    display: block;
+#personajes{
+    display: none;
+}
+
+#locaciones{
+    display: none;
+}
+
+#vehiculos{
+    display: none;
 }
 
 .button{
     text-transform: uppercase;
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 20px;
+    margin-top: 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 180px;
+    background-color: #150C1C;
+    color: #E7E7FF;
+    margin-left: 25px
+    
 }
 
 .button:hover{
     cursor: pointer;
-    background-color: #fffff0;
-} */
+    background-color: #85689D;
+    box-shadow: 0 5px 10px #000;
+    margin-left: 25px
+}
 
 /* <-------Inicio tarjetas de info */
-#tarjetas{
+.tarjetas{
     max-width: 1200px;
     padding: 20px;
     padding-bottom: 40px;
     margin: auto;
-    margin-top: 60px;
+    margin-top: 1px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .container{
@@ -101,8 +121,8 @@ p{
 
 /* <-------Inicio cara de enfrente tarjetas de info */
 .cajitasFrente{
-    display:inline-block;
-    align-items: center;
+    /* display:inline-block; */
+    /* align-items: center; */
     background-color: #D5BAEF;
     box-shadow: 0 5px 10px #000;
     border-radius: 35px;
@@ -113,8 +133,8 @@ p{
     margin-top: 30px;
     margin-bottom: 60px;
     padding: 3px;
-    position: relative;
-    z-index: 100;
+    /* position: relative;
+    z-index: 100; */
 }
 
 .posters {
