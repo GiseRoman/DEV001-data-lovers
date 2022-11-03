@@ -116,13 +116,6 @@ p{
     margin-top: 250px;
     margin-left: 80px;
     margin-right: 80px;
-    max-width: 1200px;
-    padding: 20px;
-    padding-bottom: 40px;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 /* <-------Inicio cara de enfrente tarjetas de info */

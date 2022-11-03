@@ -27,19 +27,6 @@ data.films.forEach(film =>{
     movieContainer.insertAdjacentHTML('beforeend', peliculas)
     });
 
-
-const btn2 = document.getElementById("personaje")
-function btnPerson(){
-    const pelisContainer = document.getElementById("personajes")
-    if(pelisContainer.style.display !== "none"){
-        pelisContainer.style.display = "none"
-    }else{
-        pelisContainer.style.display = "block"
-    }
-}
-btn2.addEventListener("click", btnPerson)
-
-
 //mostrar data de personajes
 const peopleContainer = document.getElementById('personajes');
 data.films.forEach(film => {
@@ -59,17 +46,6 @@ data.films.forEach(film => {
     })
 })
 
-const btn3 = document.getElementById("locacion")
-function btnLocacion(){
-    const pelisContainer = document.getElementById("locaciones")
-    if(pelisContainer.style.display !== "none"){
-        pelisContainer.style.display = "none"
-    }else{
-        pelisContainer.style.display = "block"
-    }
-}
-btn3.addEventListener("click", btnLocacion)
-
 //mostrar data de locaciones
 const locationsContainer = document.getElementById('locaciones');
 data.films.forEach(film =>{
@@ -87,17 +63,6 @@ data.films.forEach(film =>{
         locationsContainer.insertAdjacentHTML('beforeend', locaciones)
     })
 })
-
-const btn4 = document.getElementById("vehiculo")
-function btnvehiculo(){
-    const pelisContainer = document.getElementById("vehiculos")
-    if(pelisContainer.style.display !== "none"){
-        pelisContainer.style.display = "none"
-    }else{
-        pelisContainer.style.display = "block"
-    }
-}
-btn4.addEventListener("click", btnvehiculo)
 
 //mostrar data de vehiculos
 const vehiclesContainer = document.getElementById('vehiculos');
