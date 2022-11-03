@@ -7,7 +7,7 @@ html{
     margin: 0;
     background-image: url("./img/background.png");
     background-position: top;
-    background-size: 1400px;
+    background-size: 1400px 450px;
     background-repeat: no-repeat;
     background-color: #150C1C;
     background-attachment: fixed;
@@ -22,6 +22,7 @@ html{
 /* -------<Inicio nav */
 nav{
     max-height: 60px;
+    min-width: 1350px;
     background-color:#d3d2ffaf;
     justify-content: flex-start;
     color: #000;
@@ -29,6 +30,7 @@ nav{
     font-size: 25px;
     padding-left: 1px;
     padding-right: 1px;
+    position: fixed;
 }
 
 .logo{
@@ -58,47 +60,44 @@ ul{
 p{
         display: inline-block;
         padding: 5px 5px;
-        margin: 5px;
+        margin-top: 80px;
+        margin-left: 250px;
+        width: 800px;
+        height: 300;
         font-size: 30;
         font-family: 'Fuzzy Bubbles', cursive;
-        background-color: #76C7F5;
+        background-color: #150c1c85;
+        color: #E7E7FF;
         }
 
-#peliculas{
+#peliculas, #personajes, #locaciones, #vehiculos{
     display: none;
 }
 
-#personajes{
-    display: none;
-}
-
-#locaciones{
-    display: none;
-}
-
-#vehiculos{
-    display: none;
-}
 
 .button{
+    margin:auto;
+    flex-wrap: wrap;
     text-transform: uppercase;
     font-family: 'Fuzzy Bubbles', cursive;
     font-size: 20px;
-    margin-top: 20px;
+    margin-top: 80px;
+    margin-bottom: 10px;
     width: 150px;
     height: 150px;
     border-radius: 180px;
-    background-color: #150C1C;
-    color: #E7E7FF;
-    margin-left: 25px
-    
+    background-color: #D9D9D9;
+    color: #150C1C;
+    margin-left: 150px
 }
 
 .button:hover{
+    flex-wrap: wrap;
     cursor: pointer;
     background-color: #85689D;
     box-shadow: 0 5px 10px #000;
-    margin-left: 25px
+    color:#D5BAEF;
+    margin-left: 150px
 }
 
 /* <-------Inicio tarjetas de info */
