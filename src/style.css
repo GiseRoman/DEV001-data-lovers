@@ -1,8 +1,17 @@
-
+*{
+    padding: 0;
+    margin: 0;
+}
 html{
     height: 100%;
     margin: 0;
+    background-image: url("./img/background.png");
+    background-position: top;
+    background-size: 1400px;
+    background-repeat: no-repeat;
     background-color: #150C1C;
+    background-attachment: fixed;
+
 }
 
 .menu{
@@ -10,23 +19,32 @@ html{
     margin-right: 15px;
 }
 
+/* -------<Inicio nav */
 nav{
-    background-color:#D3D2FF;
+    max-height: 60px;
+    background-color:#d3d2ffaf;
+    justify-content: flex-start;
     color: #000;
-    text-align: left;
-    width: 1440;
-    height: 90;
     font-family: 'Fuzzy Bubbles', cursive;
-    font-size: 40px;
-    margin-left: 0;
-    margin-top: 0;
-    margin-right: 0;
-    padding-right: 20px;
+    font-size: 25px;
+    padding-left: 1px;
+    padding-right: 1px;
 }
-.logo{
-    background-color: #D3D2FF;
-    color:rgb(0, 0, 0);
 
+.logo{
+    padding-top: 8px;
+    padding-left: 5px;
+    background-color: transparent;
+    color:rgb(0, 0, 0);
+    text-align: left;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+.menu{
+    max-height: 50px;
+    padding-top: 5px;
+    justify-content: flex-end;
 }
 
 ul{
@@ -35,20 +53,7 @@ ul{
     margin: 0;
     padding: 0;
 }
-
-
-/*footer{
-    display: block;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 74px;
-    background-color:#D3D2FF;
-
-    }*/
-
-
+/* ------->Fin nav */
 
 p{
         display: inline-block;
@@ -59,27 +64,48 @@ p{
         background-color: #76C7F5;
         }
 
-.imagen{
-    width: 149px;
-    height: 53px;
-    float:right;
-    margin-right: 15px;
-    margin-left:430px;
+/* .panel{
+    display: none;
 }
 
-#container{
+.show {
+    display: block;
+}
+
+.button{
+    text-transform: uppercase;
+}
+
+.button:hover{
+    cursor: pointer;
+    background-color: #fffff0;
+} */
+
+/* <-------Inicio tarjetas de info */
+#tarjetas{
+    max-width: 1200px;
+    padding: 20px;
+    padding-bottom: 40px;
+    margin: auto;
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container{
     margin-top: 250px;
-    margin-left: 70px;
-    margin-right: 50px;
-   
-
+    margin-left: 80px;
+    margin-right: 80px;
 }
 
-.cajitas{
+/* <-------Inicio cara de enfrente tarjetas de info */
+.cajitasFrente{
     display:inline-block;
     align-items: center;
     background-color: #D5BAEF;
-    border-radius: 45px;
+    box-shadow: 0 5px 10px #000;
+    border-radius: 35px;
     width: 177px;
     height: 262px;
     margin-left: 25px ;
@@ -87,7 +113,8 @@ p{
     margin-top: 30px;
     margin-bottom: 60px;
     padding: 3px;
-    
+    position: relative;
+    z-index: 100;
 }
 
 .posters {
@@ -99,23 +126,63 @@ p{
     padding:5px;
     font-size:italic;
     background-color:#D5BAEF;
-    border-radius: 45px;
+    box-shadow: 0 5px 10px #000;
+    border-radius: 35px;
     color:#000;
     width: 157px;
     height: 202px;
 }
+
 .titulos{
     background-color: #76C7F5; 
-    border-radius: 45px;
-    /* border: 2px solid #76C7F5; */
+    border-radius: 35px;
+    box-shadow: 0 5px 10px #000;
     color: rgb(0, 0, 0);
     text-align: center;
-   /*padding: 15px 32px;text-decoration: none; text-align: justify; */
     width: 177px;
     height: 41px;
     font-size: justify;
+    text-align: center;
     margin-top: 0px;
     margin-left: -4px;
-    padding-top: 5px;
+    padding-top: 10px;
     font-weight: bold;
 }
+/* ------->Fin cara de enfrente tarjetas de info */
+
+/* <-------Inicio cara de atras tarjetas de info */
+.cajitasAtras{
+    display:inline-block;
+    align-items: center;
+    background-color: #D5BAEF;
+    box-shadow: 0 5px 10px #000;
+    border-radius: 45px;
+    width: 377px;
+    height: auto;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    margin-left: 25px ;
+    margin-right: 25px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    padding: 10px;
+    z-index: 90;
+}
+
+.textos{
+    background-color: transparent;
+    border-radius: 35px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    width: 377px;
+    height: auto;
+    font-size: justify;
+    margin-top: -8px;
+    margin-left: -4px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+/* ------->Fin cara de atras tarjetas de info */
+/* ------->Fin tarjetas de info */
