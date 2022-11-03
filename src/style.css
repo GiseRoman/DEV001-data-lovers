@@ -25,6 +25,7 @@ nav{
 }
 .logo{
     background-color: #D3D2FF;
+
     color:rgb(0, 0, 0);
 
 }
@@ -49,7 +50,6 @@ ul{
     }*/
 
 
-
 p{
         display: inline-block;
         padding: 5px 5px;
@@ -67,25 +67,90 @@ p{
     margin-left:430px;
 }
 
-#container{
-    margin-top: 250px;
-    margin-left: 80px;
-    margin-right: 80px;
+/* .tarjetas{
+    border: ;
+} */
+
+#tarjetas{
+    margin-left: 70px;
+    margin-right: 70px;
+    
 }
 
-.cajitas{
-    display:inline-block;
+#tarjeta{
+    height: 262px;
+    width: 177px;
+    margin-top: 10px;
+    margin-left: 70px;
+    margin-right: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    background-color: #D5BAEF;
-    border-radius: 45px;
+    /* min-height: 100vh; */
+    flex-direction: column;
+}
+
+.container{
+    max-width: 1300px;
+    padding: 20px;
+    padding-bottom: 40px;
+    margin: auto;
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cajitasFrente{
     width: 177px;
     height: 262px;
-    margin-left: 25px ;
+    /* position: relative; */
+    padding: 20px;
+    margin: 20px;
+    background-color: #D5BAEF;
+    border-radius: 45px;
+    /* display:inline-block;
+    align-items: center;*/
+    /*border-radius: 45px;
+    width: 100%;
+    height: 100%;
+    margin: 25px ;
+    padding: 3px;*/
+    /* margin-left: 25px;
     margin-right: 25px;
     margin-top: 30px;
     margin-bottom: 60px;
+    padding: 3px; */
+    /*position: absolute;*/
+    /* top: 0;
+    left:0; */
+    /*backface-visibility: hidden;
+    transform: rotateX(0deg);
+    transition: .5s; */
+}
+
+.cajitasAtras{
+    display:inline-block;
+    /* align-items: center; */
+    background-color: #D5BAEF;
+    border-radius: 45px;
+    width: 100%;
+    /* height: 100%; */
+    margin: 25px ;
     padding: 3px;
-    
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    padding: 3px;
+    position: absolute;
+    top:0;
+    left: 0;
+    backface-visibility: hidden;
+    transform: rotateX(180deg);
+    transition: .5s;
+    text-align: center;
 }
 
 .posters {
@@ -116,4 +181,11 @@ p{
     margin-left: -4px;
     padding-top: 5px;
     font-weight: bold;
+}
+
+.textos{
+    border-radius: 45px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
