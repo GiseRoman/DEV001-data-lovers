@@ -4,11 +4,11 @@ import data from './data/ghibli/ghibli.js';
 //llamar a la data desde el boton Movie
 const btn = document.getElementById("pelicula")
 function btnPelis(){
-    const pelisContainer = document.getElementById("peliculas")
-    if(pelisContainer.style.display === "none"){
-        pelisContainer.style.display = "flex"
+    const pelisContainers = document.getElementById("peliculas")
+    if(pelisContainers.style.display === "none"){
+        pelisContainers.style.display = "flex"
     }else{
-        pelisContainer.style.display = "none"
+        pelisContainers.style.display = "none"
     }
 }
 btn.addEventListener("click", btnPelis)
@@ -32,11 +32,11 @@ data.films.forEach(film =>{
 //llamar a la data desde el boton Character
 const btn2 = document.getElementById("personaje")
 function btnPerson(){
-    const peoplesContainer = document.getElementById("personajes")
-    if(peoplesContainer.style.display === "none"){
-        peoplesContainer.style.display = "block"
+    const peoplesContainers = document.getElementById("personajes")
+    if(peoplesContainers.style.display === "none"){
+        peoplesContainers.style.display = "block"
     }else{
-        peoplesContainer.style.display = "none"
+        peoplesContainers.style.display = "none"
     }
 }
 btn2.addEventListener("click", btnPerson)
@@ -64,11 +64,11 @@ data.films.forEach(film => {
 //llamar a la data desde el boton Locations
 const btn3 = document.getElementById("locacion")
 function btnLocacion(){
-    const locationsContainer = document.getElementById("locaciones")
-    if(locationsContainer.style.display === "none"){
-        locationsContainer.style.display = "flex"
+    const locationsContainers = document.getElementById("locaciones")
+    if(locationsContainers.style.display === "none"){
+        locationsContainers.style.display = "flex"
     }else{
-        locationsContainer.style.display = "none"
+        locationsContainers.style.display = "none"
     }
 }
 btn3.addEventListener("click", btnLocacion)
@@ -94,9 +94,9 @@ data.films.forEach(film =>{
 //llamar a la data desde el boton Vehicles
 const btn4 = document.getElementById("vehiculo")
 function btnvehiculo(){
-    const vehiclesContainer = document.getElementById("vehiculos")
-    if(vehiclesContainer.style.display === "none"){
-        vehiclesContainer.style.display = "flex"
+    const vehiclesContainers = document.getElementById("vehiculos")
+    if(vehiclesContainers.style.display === "none"){
+        vehiclesContainers.style.display = "flex"
     }else{
         vehiclesContainer.style.display = "none"
     }
