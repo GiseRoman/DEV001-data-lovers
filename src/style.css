@@ -5,13 +5,13 @@
 html{
     height: 100%;
     margin: 0;
-    background-image: url("./img/fondo.png");
+    background-image: url("./img/fondoin.png");
     background-position: top;
     background-size: 100% 450px;
     background-repeat: no-repeat;
     background-color: #150C1C;
     background-attachment: fixed;
-    /* display: flex; */
+    display: flex;
 
     @media (max-width: (20rem * 1.6)){
         font-size: 12px
@@ -90,10 +90,26 @@ p{
         background-color: #150c1c85;
         color: #E7E7FF;
         border-radius: 10px;
-        }
+        text-align: center;
+    }
 
 /* -------<Inicio ocultar divs */
-/* */
+/* #peliculas{
+    
+
+}
+
+#personajes{
+   
+}
+
+#locaciones{
+    
+}
+
+#vehiculos{
+    
+} */
 /* ------->Fin ocultar divs */
 
 .buttons{
@@ -205,6 +221,12 @@ p{
     flex-wrap: wrap;
     /* justify-content: center; */
 }
+
+/*.container{
+
+    /* margin-top: 100px;
+    margin-left: 80px;
+    margin-right: 80px;} */
 
 
 /* <-------Inicio cara de enfrente tarjetas de info */
