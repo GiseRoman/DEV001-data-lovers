@@ -32,11 +32,11 @@ data.films.forEach(film =>{
 //llamar a la data desde el boton Character
 const btn2 = document.getElementById("personaje")
 function btnPerson(){
-    const pelisContainer = document.getElementById("personajes")
-    if(pelisContainer.style.display === "none"){
-        pelisContainer.style.display = "block"
+    const peoplesContainer = document.getElementById("personajes")
+    if(peoplesContainer.style.display === "none"){
+        peoplesContainer.style.display = "block"
     }else{
-        pelisContainer.style.display = "none"
+        peoplesContainer.style.display = "none"
     }
 }
 btn2.addEventListener("click", btnPerson)
@@ -64,11 +64,11 @@ data.films.forEach(film => {
 //llamar a la data desde el boton Locations
 const btn3 = document.getElementById("locacion")
 function btnLocacion(){
-    const pelisContainer = document.getElementById("locaciones")
-    if(pelisContainer.style.display === "none"){
-        pelisContainer.style.display = "flex"
+    const locationsContainer = document.getElementById("locaciones")
+    if(locationsContainer.style.display === "none"){
+        locationsContainer.style.display = "flex"
     }else{
-        pelisContainer.style.display = "none"
+        locationsContainer.style.display = "none"
     }
 }
 btn3.addEventListener("click", btnLocacion)
@@ -94,11 +94,11 @@ data.films.forEach(film =>{
 //llamar a la data desde el boton Vehicles
 const btn4 = document.getElementById("vehiculo")
 function btnvehiculo(){
-    const pelisContainer = document.getElementById("vehiculos")
-    if(pelisContainer.style.display === "none"){
-        pelisContainer.style.display = "flex"
+    const vehiclesContainer = document.getElementById("vehiculos")
+    if(vehiclesContainer.style.display === "none"){
+        vehiclesContainer.style.display = "flex"
     }else{
-        pelisContainer.style.display = "none"
+        vehiclesContainer.style.display = "none"
     }
 }
 btn4.addEventListener("click", btnvehiculo)
