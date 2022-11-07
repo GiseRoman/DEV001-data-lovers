@@ -1,6 +1,16 @@
 // import { example } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
+let moviesInit = document.getElementById("peliculas")
+moviesInit.style.display = "none"
+let peoplesInit = document.getElementById("personajes")
+peoplesInit.style.display = "none"
+let locationsInit = document.getElementById("locaciones")
+locationsInit.style.display = "none"
+let vehiclesInit = document.getElementById("vehiculos")
+vehiclesInit.style.display = "none"
+
+
 //llamar a la data desde el boton Movie
 const btn = document.getElementById("pelicula")
 function btnPelis(){
@@ -34,7 +44,7 @@ const btn2 = document.getElementById("personaje")
 function btnPerson(){
     const peoplesContainers = document.getElementById("personajes")
     if(peoplesContainers.style.display === "none"){
-        peoplesContainers.style.display = "block"
+        peoplesContainers.style.display = "flex"
     }else{
         peoplesContainers.style.display = "none"
     }
