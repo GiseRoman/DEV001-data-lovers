@@ -12,7 +12,12 @@ html{
     background-color: #150C1C;
     background-attachment: fixed;
 
+    @media (max-width: (20rem * 1.6)){
+        font-size: 12px
+    }
+
 }
+
 
 .menu{
     max-width: 40px;
@@ -57,37 +62,133 @@ ul{
 }
 /* ------->Fin nav */
 
+.ghibli{
+    margin-top: 70px;
+    width: 300px;
+    height: 180px;
+    margin-left: 40px;
+    flex-wrap: wrap;
+
+}
+
 p{
         display: inline-block;
         padding: 5px 5px;
-        margin-top: 80px;
-        margin-left: 250px;
+        margin-top: 10px;
+        margin-left: 5px;
         width: 800px;
         height: 300;
         font-size: 30;
         font-family: 'Fuzzy Bubbles', cursive;
         background-color: #150c1c85;
         color: #E7E7FF;
+        border-radius: 10px;
         }
 
-#peliculas, #personajes, #locaciones, #vehiculos{
+/* -------<Inicio ocultar divs */
+#peliculas{
     display: none;
 }
 
+#personajes{
+    display: none;
+}
+
+#locaciones{
+    display: none;
+}
+
+#vehiculos{
+    display: none;
+}
+/* ------->Fin ocultar divs */
+
+.buttons{
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.animateButton{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
 
 .button{
+    display: block;
+    position: relative;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    background: url(./img/botones.png) no-repeat 100% 50%;
+    background-size: 120%;
+    background-color: #d9d9d975;
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 21px;
+    font-weight: bold;
+    text-align: center;
+    color: #150C1C;
+    font-weight: bold;
+    border-radius: 50%;
+    transition: all .5s cubic-bezier(.55, 0,.1,1);
+    box-shadow: 0px .5re, 1rem rgba(0,0,0,.75);
+}
+    .button:hover{
+        box-shadow: 0px .5rem 2rem rgba(0,0,0,.75);
+        background-position: 0% 50%;
+    }
+
+    /* .nombreButton{
+        display: block;
+        position: absolute;
+        width: (20rem / 2);
+        height: (20rem / 2);
+        line-height: (20rem / 2);
+        left: 50%;
+        top: 50%;
+        margin-top: -(20rem / 2);
+        margin-left: -(20rem /2);
+        font-size: 2rem;
+        text-align: center;
+        color: #D5BAEF;
+        border-radius: 50%;
+        background: #85689D;
+        transform: rotate(-180deg), translate(-(2rem / 2)), rotate(180deg);
+        box-shadow: 0px .5rem 1rem rgba(133, 104, 157,.5);
+        transition: all .5s cubic-bezier(.55,0,.1,1);
+    }
+    .nombreButton:hover{
+        transform: rotate(-45deg) translate(0px) rotate(-315deg);
+        background: rgb(133, 104, 157,.5);
+        width: 20rem;
+        letter-spacing: 1rem;
+        line-height: 20rem;
+        height: 20rem;
+        margin-top: -(20rem / 2);
+        margin-left: -(20rem / 2);
+        transition: all .5s cubic-bezier(.55,0,.1,1), letter-spacing 1.5s ease-out;
+    } */
+
+
+/* .button{
     margin:auto;
     flex-wrap: wrap;
     text-transform: uppercase;
     font-family: 'Fuzzy Bubbles', cursive;
-    font-size: 20px;
+    font-size: 21px;
     margin-top: 80px;
-    margin-bottom: 10px;
     width: 150px;
     height: 150px;
     border-radius: 180px;
     background-color: #D9D9D9;
     color: #150C1C;
+    font-weight: bold;
     margin-left: 150px
 }
 
@@ -98,7 +199,7 @@ p{
     box-shadow: 0 5px 10px #000;
     color:#D5BAEF;
     margin-left: 150px
-}
+} */
 
 /* <-------Inicio tarjetas de info */
 .tarjetas{
@@ -113,12 +214,18 @@ p{
 }
 
 .container{
-    margin-top: 250px;
+
+    /* margin-top: 100px;
     margin-left: 80px;
-    margin-right: 80px;
+    margin-right: 80px; */
 }
 
 /* <-------Inicio cara de enfrente tarjetas de info */
+.panel{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .cajitasFrente{
     /* display:inline-block; */
     /* align-items: center; */

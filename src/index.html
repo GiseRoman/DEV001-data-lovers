@@ -9,62 +9,71 @@
 <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@700&family=Fuzzy+Bubbles:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <nav>
-    <img src="./img/sg.png" width="120px" class="logo">
-      <ul>
-        <li class="menu"><a href="#!"><img src="./img/menu.svg" class="menu"></img></a>
-          <!-- <ul>
-            <li><a href="#!">Home</a></li>
-            <li><a href="#!">Movies</a></li>
-            <li><a href="#!">Characters</a></li>
-            <li><a href="#!">Locations</a></li>
-            <li><a href="#!">Vehicles</a></li>
-          </ul>
-        </li> -->
-      </ul>
-    </nav>
+    <header>
+      <nav>
+      <img src="./img/sg.png" width="120px" class="logo">
+        <ul>
+          <li class="menu"><a href="#!"><img src="./img/menu.svg" class="menu"></img></a>
+            <!-- <ul>
+              <li><a href="#!">Home</a></li>
+              <li><a href="#!">Movies</a></li>
+              <li><a href="#!">Characters</a></li>
+              <li><a href="#!">Locations</a></li>
+              <li><a href="#!">Vehicles</a></li>
+            </ul>
+          </li> -->
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <article>
+          <img class="ghibli" src="./img/studio-ghibli-logo.svg">
+          <p>Studio Ghibli was founded by manga animator, director, producer, screenwriter, author, and artist Hayao Miyazaki; Japanese film director Isao Takahata; and producer Toshio Suzuki. Takahata and Miyazaki met in the 1960s when they were both working for the Japanese animation studio Tôei Dôga. Although they collaborated for more than a decade, it was not until the mid-1980s that they decided to start their own company. In 1985, with funding from publisher Tokuma Shoten, Takahata, Miyazaki, and Suzuki founded Studio Ghibli, a small production studio in suburban Tokyo.
+          </p>
+        </article>
+      </section>
 
-    <section>
-      <div>
-        <p>Studio Ghibli fue fundado por el animador, director, productor, guionista, autor y artista de manga Hayao Miyazaki; el director de cine japonés Isao Takahata; y el productor Toshio Suzuki. Takahata y Miyazaki se conocieron en la década de 1960 cuando ambos trabajaban para el estudio de animación japonés Tôei Dôga. Aunque colaboraron por más de una década, fue hasta mediados de los años 80 que decidieron comenzar su propia empresa. En 1985, con financiación de la editorial Tokuma Shoten, Takahata, Miyazaki y Suzuki fundaron Studio Ghibli, un pequeño estudio de producción en los suburbios de Tokio.
-        </p>
-      </div>
-    </section>
-
-    <section>
-      <div class="buttons">
-        <button id="pelicula" class ="button" onclick="btnPelis()">Peliculas</button>
-        <button id="personaje" class ="button">Personajes</button>
-        <button id="locacion" class ="button">Locaciones</button>
-        <button id="vehiculo" class ="button">vehiculos</button>
-      </div>
-    </section>
-
-    <section class="tarjetas">
-      <div id="peliculas" class="panel">
-        <div class="container">
+      <section class="buttons">
+        <div class="animateButton">
+          <button id="pelicula" class ="button" onclick="btnPelis()">Movies</button>
         </div>
-      </div>
+        <div class="animateButton">
+          <button id="personaje" class ="button">Characters</button>
+        </div>
+        <div class="animateButton">
+          <button id="locacion" class ="button">Locations</button>
+        </div>
+        <div class="animateButton">
+          <button id="vehiculo" class ="button">vehicles</button>
+        </div>
+      </section>
+
+      <section class="tarjetas">
+        <article id="peliculas" class="panel">
+          <div class="container">
+          </div>
+        </article>
       </section>
       <section class="tarjetas">
-      <div id="personajes" class="panel">
-        <div class="container">
-        </div>
-      </div>
+        <article id="personajes" class="panel">
+          <div class="container">
+          </div>
+        </article>
       </section>
       <section class="tarjetas">
-      <div id="locaciones" class="panel">
-        <div class="container">
-        </div>
-      </div>
+        <article id="locaciones" class="panel">
+          <div class="container">
+          </div>
+        </article>
       </section>
       <section class="tarjetas">
-      <div id="vehiculos" class="panel">
-        <div class="container">
-        </div>
-      </div>
+        <article id="vehiculos" class="panel">
+          <div class="container">
+          </div>
+        </article>
       </section>
-    <div id="root"></div>
+    </main>
     <!-- <script src="main.js" type="module"></script> -->
   </body>
   <script src="main.js" type="module"></script>

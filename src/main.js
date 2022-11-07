@@ -1,17 +1,14 @@
 // import { example } from './data.js';
-// import data from './data/lol/lol.js';
 import data from './data/ghibli/ghibli.js';
-// import data from './data/rickandmorty/rickandmorty.js';
-// console.log(example, data);
 
-
+//llamar a la data desde el boton Movie
 const btn = document.getElementById("pelicula")
 function btnPelis(){
     const pelisContainer = document.getElementById("peliculas")
-    if(pelisContainer.style.display !== "none"){
-        pelisContainer.style.display = "none"
+    if(pelisContainer.style.display === "none"){
+        pelisContainer.style.display = "flex"
     }else{
-        pelisContainer.style.display = "block"
+        pelisContainer.style.display = "none"
     }
 }
 btn.addEventListener("click", btnPelis)
@@ -22,10 +19,28 @@ const movieContainer = document.getElementById('peliculas')
 data.films.forEach(film =>{
     const peliculas = `<div class="container"> <div class="cajitasFrente">
     <img class="posters" src="${film.poster}" width="157" height="202"></img>
-    <p class="titulos">${film.title}</p></div></div>
-    </div>`
+    <p class="titulos">${film.title}</p></div></div>`
+    // <div class="cajitasAtras"><p class="textos">${film.description}"</p>
+    // <p class="textos">Director: ${film.director}</p>
+    // <p class="textos">Producer: ${film.producer}</p>
+    // <p class="textos"> Year: ${film.release_date}</p>
+    // <p class="textos tarjetas">Score: ${film.rt_score}</p></div></div>
     movieContainer.insertAdjacentHTML('beforeend', peliculas)
     });
+
+
+//llamar a la data desde el boton Character
+const btn2 = document.getElementById("personaje")
+function btnPerson(){
+    const pelisContainer = document.getElementById("personajes")
+    if(pelisContainer.style.display === "none"){
+        pelisContainer.style.display = "block"
+    }else{
+        pelisContainer.style.display = "none"
+    }
+}
+btn2.addEventListener("click", btnPerson)
+
 
 //mostrar data de personajes
 const peopleContainer = document.getElementById('personajes');
@@ -46,6 +61,18 @@ data.films.forEach(film => {
     })
 })
 
+//llamar a la data desde el boton Locations
+const btn3 = document.getElementById("locacion")
+function btnLocacion(){
+    const pelisContainer = document.getElementById("locaciones")
+    if(pelisContainer.style.display === "none"){
+        pelisContainer.style.display = "flex"
+    }else{
+        pelisContainer.style.display = "none"
+    }
+}
+btn3.addEventListener("click", btnLocacion)
+
 //mostrar data de locaciones
 const locationsContainer = document.getElementById('locaciones');
 data.films.forEach(film =>{
@@ -63,6 +90,18 @@ data.films.forEach(film =>{
         locationsContainer.insertAdjacentHTML('beforeend', locaciones)
     })
 })
+
+//llamar a la data desde el boton Vehicles
+const btn4 = document.getElementById("vehiculo")
+function btnvehiculo(){
+    const pelisContainer = document.getElementById("vehiculos")
+    if(pelisContainer.style.display === "none"){
+        pelisContainer.style.display = "flex"
+    }else{
+        pelisContainer.style.display = "none"
+    }
+}
+btn4.addEventListener("click", btnvehiculo)
 
 //mostrar data de vehiculos
 const vehiclesContainer = document.getElementById('vehiculos');
