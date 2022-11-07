@@ -17,6 +17,9 @@ function btnPelis(){
     const pelisContainers = document.getElementById("peliculas")
     if(pelisContainers.style.display === "none"){
         pelisContainers.style.display = "flex"
+        peoplesInit.style.display = "none"
+        locationsInit.style.display = "none"
+        vehiclesInit.style.display = "none"
     }else{
         pelisContainers.style.display = "none"
     }
@@ -45,6 +48,9 @@ function btnPerson(){
     const peoplesContainers = document.getElementById("personajes")
     if(peoplesContainers.style.display === "none"){
         peoplesContainers.style.display = "flex"
+        moviesInit.style.display = "none"
+        locationsInit.style.display = "none"
+        vehiclesInit.style.display = "none"
     }else{
         peoplesContainers.style.display = "none"
     }
@@ -77,6 +83,9 @@ function btnLocacion(){
     const locationsContainers = document.getElementById("locaciones")
     if(locationsContainers.style.display === "none"){
         locationsContainers.style.display = "flex"
+        peoplesInit.style.display = "none"
+        moviesInit.style.display = "none"
+        vehiclesInit.style.display = "none"
     }else{
         locationsContainers.style.display = "none"
     }
@@ -107,6 +116,9 @@ function btnvehiculo(){
     const vehiclesContainers = document.getElementById("vehiculos")
     if(vehiclesContainers.style.display === "none"){
         vehiclesContainers.style.display = "flex"
+        peoplesInit.style.display = "none"
+        locationsInit.style.display = "none"
+        moviesInit.style.display = "none"
     }else{
         vehiclesContainer.style.display = "none"
     }

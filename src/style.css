@@ -5,12 +5,13 @@
 html{
     height: 100%;
     margin: 0;
-    background-image: url("./img/background.png");
+    background-image: url("./img/fondo.png");
     background-position: top;
-    background-size: 1400px 450px;
+    background-size: 100% 450px;
     background-repeat: no-repeat;
     background-color: #150C1C;
     background-attachment: fixed;
+    /* display: flex; */
 
     @media (max-width: (20rem * 1.6)){
         font-size: 12px
@@ -27,7 +28,7 @@ html{
 /* -------<Inicio nav */
 nav{
     max-height: 60px;
-    min-width: 1350px;
+    width: 100%;
     background-color:#d3d2ffaf;
     justify-content: flex-start;
     color: #000;
@@ -63,13 +64,19 @@ ul{
 /* ------->Fin nav */
 
 .ghibli{
-    margin-top: 70px;
+    margin-top: 50px;
     width: 300px;
     height: 180px;
-    margin-left: 40px;
-    flex-wrap: wrap;
-
+    margin-left: 35%;
+    margin-right: 20px;
 }
+
+/* .description{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-left: 30%;
+} */
 
 p{
         display: inline-block;
@@ -86,21 +93,7 @@ p{
         }
 
 /* -------<Inicio ocultar divs */
-#peliculas{
-    display: none;
-}
-
-#personajes{
-    display: none;
-}
-
-#locaciones{
-    display: none;
-}
-
-#vehiculos{
-    display: none;
-}
+/* */
 /* ------->Fin ocultar divs */
 
 .buttons{
@@ -213,12 +206,6 @@ p{
     /* justify-content: center; */
 }
 
-.container{
-
-    /* margin-top: 100px;
-    margin-left: 80px;
-    margin-right: 80px; */
-}
 
 /* <-------Inicio cara de enfrente tarjetas de info */
 .panel{
