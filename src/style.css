@@ -1,17 +1,19 @@
 *{
     padding: 0;
     margin: 0;
+    scrollbar-width: thin;
+    scrollbar-color: #22045aee #120c35c2;
+    
 }
 html{
     height: 100%;
     margin: 0;
-    background-image: url("./img/fondoin.png");
+    background-image: url("./img/theBackground.jpg");
     background-position: top;
-    background-size: 100% 450px;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-color: #150C1C;
     background-attachment: fixed;
-    display: flex;
 
     @media (max-width: (20rem * 1.6)){
         font-size: 12px
@@ -19,6 +21,20 @@ html{
 
 }
 
+/* <-------Scroll Bar color y diseño Chrome, Edge y Safari */
+body::-webkit-scrollbar{
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track{
+    background: #120c35c2;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: #22045aee;
+    border-radius: 35px;
+}
+/* ------->Scroll Bar color y diseño Chrome, Edge y Safari */
 
 .menu{
     max-width: 40px;
@@ -47,6 +63,7 @@ nav{
     text-align: left;
     font-weight: bold;
     border-radius: 15px;
+    opacity: 70%;
 }
 
 .menu{
@@ -64,11 +81,14 @@ ul{
 /* ------->Fin nav */
 
 .ghibli{
-    margin-top: 50px;
+    margin-top: 70px;
     width: 300px;
     height: 180px;
     margin-left: 35%;
     margin-right: 20px;
+    background-color:#e7e7ff62;
+    border-radius: 45px;
+    justify-content: center;
 }
 
 /* .description{
@@ -135,14 +155,14 @@ p{
     border-radius: 50%;
     width: 10rem;
     height: 10rem;
-    background: url(./img/botones.png) no-repeat 100% 50%;
-    background-size: 120%;
-    background-color: #d9d9d975;
+    background: url(./img/startotoro.png) no-repeat 50% 90% ;
+    background-size: 350%;
+    background-color: #d9d9d956;
     font-family: 'Fuzzy Bubbles', cursive;
-    font-size: 21px;
+    font-size: 23px;
     font-weight: bold;
     text-align: center;
-    color: #150C1C;
+    color: #E7E7FF;
     font-weight: bold;
     border-radius: 50%;
     transition: all .5s cubic-bezier(.55, 0,.1,1);
@@ -150,67 +170,20 @@ p{
 }
     .button:hover{
         box-shadow: 0px .5rem 2rem rgba(0,0,0,.75);
-        background-position: 0% 50%;
+        background-position: 50% 70%;
+        background-size: 94%;
+        font-size: 28px;
+        color: #150C1C;
     }
-
-    /* .nombreButton{
-        display: block;
-        position: absolute;
-        width: (20rem / 2);
-        height: (20rem / 2);
-        line-height: (20rem / 2);
-        left: 50%;
-        top: 50%;
-        margin-top: -(20rem / 2);
-        margin-left: -(20rem /2);
-        font-size: 2rem;
-        text-align: center;
-        color: #D5BAEF;
-        border-radius: 50%;
-        background: #85689D;
-        transform: rotate(-180deg), translate(-(2rem / 2)), rotate(180deg);
-        box-shadow: 0px .5rem 1rem rgba(133, 104, 157,.5);
-        transition: all .5s cubic-bezier(.55,0,.1,1);
-    }
-    .nombreButton:hover{
-        transform: rotate(-45deg) translate(0px) rotate(-315deg);
-        background: rgb(133, 104, 157,.5);
-        width: 20rem;
-        letter-spacing: 1rem;
-        line-height: 20rem;
-        height: 20rem;
-        margin-top: -(20rem / 2);
-        margin-left: -(20rem / 2);
-        transition: all .5s cubic-bezier(.55,0,.1,1), letter-spacing 1.5s ease-out;
-    } */
-
-
-/* .button{
-    margin:auto;
-    flex-wrap: wrap;
-    text-transform: uppercase;
-    font-family: 'Fuzzy Bubbles', cursive;
-    font-size: 21px;
-    margin-top: 80px;
-    width: 150px;
-    height: 150px;
-    border-radius: 180px;
-    background-color: #D9D9D9;
-    color: #150C1C;
-    font-weight: bold;
-    margin-left: 150px
-}
-
-.button:hover{
-    flex-wrap: wrap;
-    cursor: pointer;
-    background-color: #85689D;
-    box-shadow: 0 5px 10px #000;
-    color:#D5BAEF;
-    margin-left: 150px
-} */
 
 /* <-------Inicio tarjetas de info */
+
+.fondoTarjetas{
+    background-color: #150c1ce0;
+    background-size: 100% 100%;
+    margin-top: 1%;
+}
+
 .tarjetas{
     max-width: 1200px;
     padding: 20px;
@@ -219,14 +192,11 @@ p{
     margin-top: 1px;
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: center; */
 }
 
-/*.container{
+/* .container{
 
-    /* margin-top: 100px;
-    margin-left: 80px;
-    margin-right: 80px;} */
+} */
 
 
 /* <-------Inicio cara de enfrente tarjetas de info */
