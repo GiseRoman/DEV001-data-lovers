@@ -30,7 +30,7 @@ const movieContainer = document.getElementById('peliculas')
 
 //mostrar data de peliculas
 data.films.forEach(film =>{
-    const peliculas = `<div class="container"> <div class="cajitasFrente">
+    const peliculas = `<div class="container" id="contenedor"> <div class="cajitasFrente">
     <img class="posters" src="${film.poster}" width="157" height="202"></img>
     <p class="titulos">${film.title}</p></div></div>`
     // <div class="cajitasAtras"><p class="textos">${film.description}"</p>
@@ -39,6 +39,7 @@ data.films.forEach(film =>{
     // <p class="textos"> Year: ${film.release_date}</p>
     // <p class="textos tarjetas">Score: ${film.rt_score}</p></div></div>
     movieContainer.insertAdjacentHTML('beforeend', peliculas)
+    console.log(document.querySelector("#contenedor"))
     });
 
 
