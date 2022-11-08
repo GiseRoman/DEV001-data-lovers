@@ -1,20 +1,20 @@
 // import { example } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
-let moviesInit = document.getElementById("peliculas")
+let moviesInit = document.getElementById("peliculas").parentElement
 moviesInit.style.display = "none"
-let peoplesInit = document.getElementById("personajes")
+let peoplesInit = document.getElementById("personajes").parentElement
 peoplesInit.style.display = "none"
-let locationsInit = document.getElementById("locaciones")
+let locationsInit = document.getElementById("locaciones").parentElement
 locationsInit.style.display = "none"
-let vehiclesInit = document.getElementById("vehiculos")
+let vehiclesInit = document.getElementById("vehiculos").parentElement
 vehiclesInit.style.display = "none"
 
 
 //llamar a la data desde el boton Movie
 const btn = document.getElementById("pelicula")
 function btnPelis(){
-    const pelisContainers = document.getElementById("peliculas")
+    const pelisContainers = document.getElementById("peliculas").parentElement
     if(pelisContainers.style.display === "none"){
         pelisContainers.style.display = "flex"
         locationsInit.style.display = "none"
@@ -31,7 +31,6 @@ const movieContainer = document.getElementById('peliculas')
 //mostrar data de peliculas
 data.films.forEach(film =>{
     const peliculas = `<div class="container"> <div class="cajitasFrente">
-    <span class="close">&times;</span>
     <img class="posters" src="${film.poster}" width="157" height="202"></img>
     <p class="titulos">${film.title}</p></div></div>`
     // <div class ="cajitasAtras"><p class="textos">${film.description}"</p>
@@ -40,12 +39,13 @@ data.films.forEach(film =>{
     // <p class="textos"> Year: ${film.release_date}</p>
     // <p class="textos tarjetas">Score: ${film.rt_score}</p></div></div>
     movieContainer.insertAdjacentHTML('beforeend', peliculas)
+    console.log(document.querySelector("#contenedor"))
     });
 
 //llamar a la data desde el boton Character
 const btn2 = document.getElementById("personaje")
 function btnPerson(){
-    const peoplesContainers = document.getElementById("personajes")
+    const peoplesContainers = document.getElementById("personajes").parentElement
     if(peoplesContainers.style.display === "none"){
         peoplesContainers.style.display = "flex"
         moviesInit.style.display = "none"
@@ -80,7 +80,7 @@ data.films.forEach(film => {
 //llamar a la data desde el boton Locations
 const btn3 = document.getElementById("locacion")
 function btnLocacion(){
-    const locationsContainers = document.getElementById("locaciones")
+    const locationsContainers = document.getElementById("locaciones").parentElement
     if(locationsContainers.style.display === "none"){
         locationsContainers.style.display = "flex"
         moviesInit.style.display = "none"
@@ -113,7 +113,7 @@ data.films.forEach(film =>{
 //llamar a la data desde el boton Vehicles
 const btn4 = document.getElementById("vehiculo")
 function btnvehiculo(){
-    const vehiclesContainers = document.getElementById("vehiculos")
+    const vehiclesContainers = document.getElementById("vehiculos").parentElement
     if(vehiclesContainers.style.display === "none"){
         vehiclesContainers.style.display = "flex"
         moviesInit.style.display = "none"
