@@ -8,6 +8,7 @@
 html{
     height: 100%;
     margin: 0;
+    font-family: 'Fuzzy Bubbles', cursive;
     background-image: url("./img/theBackground.jpg");
     background-position: top;
     background-size: 100%;
@@ -72,8 +73,8 @@ nav{
 }
 
 .menu{
-    max-height: 50px;
-    padding-top: 5px;
+    max-height: 95%;
+    padding-top: 4%;
     display: flex;
     justify-content: flex-end;
 }
@@ -103,6 +104,43 @@ ul{
     align-items: center;
     margin-left: 30%;
 } */
+
+.buscadorTarjetas{
+    display: flex;
+    padding-left: .8%;
+    border-radius: 10px;
+    margin-left: 33.5%;
+    width: 20rem;
+    height: 1.4rem;
+    background-color: #d5baefaf;
+    border-color: #22045aee;
+    color: #150C1C;
+    font-size: 18px;
+}
+
+.botonBuscador{
+    display: flex;
+    border-radius: 15px;
+    background-color: #22045aaf;
+    color: #E7E7FF;
+    width: 5rem;
+    height: 2rem;
+    font-family: 'Fuzzy Bubbles', cursive;
+    text-align: center;
+    font-size: 18px;
+    padding-left: .4rem;
+    padding-top: .3rem;
+    margin-left: 43%;
+    margin-top: 1%;
+
+}
+
+.botonBuscador:hover{
+    box-shadow: 0px .3rem .3rem rgba(0,0,0,.75);
+    background-color: #d5baefaf;
+    /* font-weight: bold; */
+    color: #22045aee;
+}
 
 p{
         display: inline-block;
@@ -298,100 +336,51 @@ p{
 /* ------->Fin cara de atras tarjetas de info */
 /* ------->Fin tarjetas de info */
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 768px){
     html{
         background-position: 76% 50%;
-        background-size: 400%;
-        font-size: 10px
-    }
-
-    .menu{
-        max-width: 65px;
-        margin-right: 10px;
+        background-size: 150%;
     }
     
     /* -------<Inicio nav */
     nav{
-        height: 8%;
-        width: 100%;
-        background-color:#d3d2ffaf;
+        height: 10%;
         justify-content: flex-start;
-        color: #000;
-        font-family: 'Fuzzy Bubbles', cursive;
-        font-size: 25px;
         padding-left: 1px;
         padding-right: 1px;
-        position: fixed;
-    
-        @media (max-width: (20rem * 1.6)){
-            max-height: 200px;
-        }
+        z-index: 100;
     }
     
     .logo{
-        width: 39%;
-        padding-top: 6px;
+        width: 18%;
+        padding-top: 5px;
         padding-left: 5px;
-        background-color: transparent;
-        color:rgb(0, 0, 0);
-        text-align: left;
-        font-weight: bold;
-        border-radius: 15px;
-        opacity: 70%;
     }
     
     .menu{
         max-height: 100%;
-        padding-top: 5px;
+        padding-top: 5%;
+        max-width: 5rem;
+        margin-right: 2%;
     }
     /* ------->Fin nav */
     
     .ghibli{
-        margin-top: 20%;
-        width: 80%;
-        height: 80%;
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-
-    .buttons{
-        margin-left: 0;
-        margin-right: 0;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
+        margin-top: 9%;
     }
     
     .animateButton{
-        margin-left: 2%;
-        margin-right: 2%;
-        margin-top: 20px;
-        display: flex;
-        align-items: center;
+        margin-left: .9%;
+        margin-right: .9%;
     }
     
     .button{
-        display: block;
-        position: relative;
-        cursor: pointer;
-        border-radius: 50%;
         width: 9rem;
         height: 9rem;
-        font-size: 16px;
-        font-weight: bold;
-        text-align: center;
-        color: #E7E7FF;
-        font-weight: bold;
-        border-radius: 50%;
-        transition: all .5s cubic-bezier(.55, 0,.1,1);
-        box-shadow: 0px .5re, 1rem rgba(0,0,0,.75);
+        font-size: 25px;
     }
         .button:hover{
-            box-shadow: 0px .5rem 2rem rgba(0,0,0,.75);
-            background-position: 50% 70%;
-            background-size: 94%;
-            font-size: 15px;
-            color: #150C1C;
+            font-size: 25px;
         }
     
     /* <-------Inicio tarjetas de info */
@@ -401,68 +390,34 @@ p{
         background-size: 100% 100%;
         margin-top: 1%;
     }
-    
-    .tarjetas{
-        max-width: 1200px;
-        padding: 20px;
-        padding-bottom: 40px;
-        margin: auto;
-        margin-top: 1px;
-        display: inline-flex;
-        flex-wrap: wrap;
-    }
-    
-    /* .container{
-    
-    } */
-    
-    
-    /* <-------Inicio cara de enfrente tarjetas de info */
+
+/* <-------Inicio cara de enfrente tarjetas de info */
     .panel{
         display: flex;
         flex-wrap: wrap;
     }
-    
+
     .cajitasFrente{
-        border-radius: 35px;
-        width: 147px;
+        width: 157px;
         height: 262px;
-        margin-left: 2%;
-        margin-right: 20px;
+        margin-left: 10%;
+        margin-right: 13.5px;
     }
-    
+
     .posters {
-        width:150px;
-        margin-left:5px;
-        margin-right: 5px;
-        margin-top: 2px;
-        margin-bottom: -3px;
-        padding:5px;
-        border-radius: 35px;
-        color:#000;
-        width: 127px;
+        width: 137px;
         height: 202px;
     }
     
     .titulos{
-        background-color: #76C7F5; 
-        border-radius: 35px;
-        box-shadow: 0 5px 10px #000;
-        color: rgb(0, 0, 0);
-        text-align: center;
         width: 147px;
         height: 41px;
-        font-size: justify;
-        text-align: center;
-        margin-top: 0px;
-        margin-left: -4px;
-        padding-top: 10px;
-        font-weight: bold;
+        font-size: 100%;
     }
     /* ------->Fin cara de enfrente tarjetas de info */
     
     /* <-------Inicio cara de atras tarjetas de info */
-    .cajitasAtras{
+    /* .cajitasAtras{
         display:inline-block;
         align-items: center;
         background-color: #D5BAEF;
@@ -494,7 +449,8 @@ p{
         margin-left: -4px;
         padding-top: 10px;
         font-weight: bold;
-    }
+    } */
     /* ------->Fin cara de atras tarjetas de info */
     /* ------->Fin tarjetas de info */
 }
+

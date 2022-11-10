@@ -1,6 +1,43 @@
 // import { example } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
+//<----------------Inicio Buscador--------------
+
+let resultadoInit = document.getElementById("resultadoBusqueda").parentElement
+resultadoInit.style.display = "none"
+const buscador = document.querySelector("#buscador")
+const botonBuscador = document.querySelector("#boton")
+const resultadoBusqueda = document.querySelector("#resultadoBusqueda")
+
+const buscar = () => {
+    console.log(buscador.value)
+    resultadoBusqueda.innerHTML = ''
+
+    const textoBusqueda = buscador
+    for (let film of data.films){
+        let titulo = film.title
+        if(titulo.indexOf(textoBusqueda) != -1){
+            resultadoBusqueda.innerHTML += `
+            <p class="titulos">${film.title}</p>`
+        }
+        // let direct = film.director.toLowerCase()
+        // let produc = film.producer.toLowerCase()
+        // let persona = film.people
+    }
+    if(resultadoBusqueda.innerHTML === ''){
+        resultadoInit.style.display = "flex"
+        resultadoBusqueda.innerHTML += `
+        <p>Lo sentimos, no encontramos lo que buscabas</p>
+        `
+    }
+}
+
+botonBuscador.addEventListener('click', buscar)
+
+//<----------------Fin Buscador--------------
+
+
+//<----------------Inicio trabajar las tarjetas de data--------------
 let moviesInit = document.getElementById("peliculas").parentElement
 moviesInit.style.display = "none"
 let peoplesInit = document.getElementById("personajes").parentElement
@@ -39,7 +76,7 @@ data.films.forEach(film =>{
     // <p class="textos"> Year: ${film.release_date}</p>
     // <p class="textos tarjetas">Score: ${film.rt_score}</p></div></div>
     movieContainer.insertAdjacentHTML('beforeend', peliculas)
-    console.log(document.querySelector("#contenedor"))
+    // console.log(document.querySelector("#contenedor"))
     });
 
 
@@ -143,3 +180,60 @@ data.films.forEach(film =>{
         vehiclesContainer.insertAdjacentHTML('beforeend', vehicles)
     })
 })
+
+//<----------------Fin trabajar las tarjetas de data--------------
+
+
+
+
+// intentos fallidos
+
+// const movieContainer = document.getElementById('peliculas')
+
+// //mostrar data de peliculas
+// const dataPelis = () => {
+//     data.films.forEach(film=>{
+//     let moviesInit = document.getElementById("peliculas").parentElement
+//     moviesInit.style.display = "none"
+//     const peliculas = `<div class="container" id="contenedor"> <div class="cajitasFrente">
+//     <img class="posters" src="${film.poster}" width="157" height="202"></img>
+//     <p class="titulos">${film.title}</p></div></div>`
+//     movieContainer.insertAdjacentHTML('beforeend', peliculas)
+//     });
+// }
+
+// const modalPelis = () =>{
+//     data.films.forEach(film=>{
+//     let moviesModal = document.getElementById("modalMovies")
+//     moviesModal.style.display = "none"
+//     const peliculasModal = `<div class="containerModal">
+//     <div class="cajitasAtras"><p class="textos">${film.description}"</p>
+//     <p class="textos">Director: ${film.director}</p>
+//     <p class="textos">Producer: ${film.producer}</p>
+//     <p class="textos"> Year: ${film.release_date}</p>
+//     <p class="textos tarjetas">Score: ${film.rt_score}</p></div></div></div>`
+//     movieContainer.insertAdjacentHTML('beforeend', peliculasModal)
+//     });
+// }
+
+// const container = document.getElementsByClassName("container")
+// container.addEventListener("mouseover", mostrarModal())
+// function mostrarModal(){
+//     let moviesModal = document.getElementById("modalMovies")
+//     const pelisModal = modalPelis()
+//     const container = document.getElementsByClassName("container")
+//     container.addEventListener("mouseover", pelisModal)
+// }
+
+// const btn = document.getElementById("pelicula")
+// function btnPelis(){
+//     dataPelis()
+//     const pelisContainers = document.getElementById("peliculas").parentElement
+//     if(pelisContainers.style.display === "none"){
+//         pelisContainers.style.display = "flex"
+//     }else{
+//         pelisContainers.style.display = "none"
+//     }
+// }
+// btn.addEventListener("click", btnPelis)
+
