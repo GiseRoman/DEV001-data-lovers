@@ -37,6 +37,11 @@
         </article>
       </section>
 
+      <section>
+        <input type="text" id="buscador" class="buscadorTarjetas" placeholder="Escribe tu búsqueda aquí">
+        <button class="botonBuscador" id="boton">Buscar</button>
+      </section>
+
       <section class="buttons">
         <div class="animateButton">
           <button id="pelicula" class ="button">Movies</button>
@@ -54,8 +59,16 @@
 
       <section class="fondoTarjetas">
         <section class="tarjetas">
-          <article id="peliculas" class="panel">
+          <article id="resultadoBusqueda" class="panel">
             <div class="container">
+            </div>
+          </article>
+        </section>
+        <section class="tarjetas">
+          <article id="peliculas" class="panel">
+            <div class="container" onmouseover="mostrarModal()">
+            </div>
+            <div class="containerModal" id="modalMovies">
             </div>
           </article>
         </section>
