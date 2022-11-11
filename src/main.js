@@ -2,47 +2,21 @@
 import data from './data/ghibli/ghibli.js';
 
 //<----------------Inicio Buscador--------------
+document.addEventListener('keyup',e => {
+    if(e.target.matches("#buscador")){
+     document.querySelectorAll('.container').forEach(buscarTitulos=>{
+        buscarTitulos.textContent.toLowerCase().includes(e.target.value)
+         ?buscarTitulos.style.display = "flex"
+         :buscarTitulos.style.display = "none"
+     })
+    }
+   })
+//<----------------Inicio Buscador--------------
 
-// const buscador = document.querySelector("#buscador")
-// const botonBuscador = document.querySelector("#boton")
-// const resultadoBusqueda = document.querySelector("#resultadoBusqueda")
-// const resultadoInit = document.querySelector("#resultadoBusqueda")
-// resultadoInit.style.display = "none"
+//<----------------Ordenamiento--------------
 
-// let  encontrar = data.films.filter(film => {
-//     if(film.title.indexOf(buscador) != -1){
-//         resultadoInit.style.display = "flex"
-//         resultadoBusqueda.innerHTML += `
-//         <p class="titulos">${film.title}</p>`
-//     }
-// }
-// console.log(encontrar)
-// const buscar = () => {
-//     resultadoBusqueda.innerHTML = ''
-//     const textoBusqueda = buscador
-//     for (let film of data.films){
-//         if(film.indexOf(textoBusqueda) != -1){
-//             resultadoInit.style.display = "flex"
-//             resultadoBusqueda.innerHTML += `
-//             <p class="titulos">${film.title}</p>`
-//         }
-//         // let direct = film.director.toLowerCase()
-//         // let produc = film.producer.toLowerCase()
-//         // let persona = film.people
-//     }
-//     if(resultadoBusqueda.innerHTML === ''){
-//         resultadoInit.style.display = "flex"
-//         resultadoBusqueda.innerHTML += `
-//         <p>Lo sentimos, no encontramos lo que buscabas</p>
-//         `
-//     }
-// }
 
-// botonBuscador.addEventListener('click', buscar)
-// buscador.addEventListener('keyup', buscar)
-
-//<----------------Fin Buscador--------------
-
+//<----------------Ordenamiento--------------
 
 //<----------------Inicio trabajar las tarjetas de data--------------
 let moviesInit = document.getElementById("peliculas").parentElement
@@ -70,7 +44,7 @@ buscadorOculto.style.display = "none"
 
 //llamar a la data desde el boton Movie
 const btn = document.getElementById("pelicula")
-function btnPelis(){
+const btnPelis = () => {
     const pelisContainers = document.getElementById("peliculas").parentElement
     if(pelisContainers.style.display === "none"){
         pelisContainers.style.display = "flex"
@@ -233,91 +207,4 @@ data.films.forEach(film =>{
 })
 
 //<----------------Fin trabajar las tarjetas de data--------------
-
-
-document.addEventListener('keyup',e => {
-    if(e.target.matches("#buscador")){
-     document.querySelectorAll('.container').forEach(buscarTitulos=>{
-        console.log(buscarTitulos.textContent.toLowerCase().includes(e.target.value)
-         ?buscarTitulos.classList.remove('filtro')
-         :buscarTitulos.classList.add('filtro'))
-     })
-    }
-   })
- 
-
-
-// let resultadosInit = document.getElementById("resultadoBusqueda").parentElement
-// resultadosInit.style.display = "none"
-
-// const tarjetas = document.querySelectorAll('.titulos')
-
-// tarjetas.forEach(tarjeta => {
-//     console.log(tarjeta)
-    
-// })
-
-
-// const infoBusqueda = buscador.value.toLowerCase()
-
-// botonBuscador.addEventListener('keyup', () =>{
-//     tarjetas.forEach(objetoTitulo => {
-//         resultadosInit.style.display = "flex"
-//         resultadosInit.insertAdjacentHTML('beforeend', objetoTitulo)
-//     })
-// })
-
-// const ghibli = data.films
-
-// ghibli.people
-// intentos fallidos
-
-// const movieContainer = document.getElementById('peliculas')
-
-// //mostrar data de peliculas
-// const dataPelis = () => {
-//     data.films.forEach(film=>{
-//     let moviesInit = document.getElementById("peliculas").parentElement
-//     moviesInit.style.display = "none"
-//     const peliculas = `<div class="container" id="contenedor"> <div class="cajitasFrente">
-//     <img class="posters" src="${film.poster}" width="157" height="202"></img>
-//     <p class="titulos">${film.title}</p></div></div>`
-//     movieContainer.insertAdjacentHTML('beforeend', peliculas)
-//     });
-// }
-
-// const modalPelis = () =>{
-//     data.films.forEach(film=>{
-//     let moviesModal = document.getElementById("modalMovies")
-//     moviesModal.style.display = "none"
-//     const peliculasModal = `<div class="containerModal">
-//     <div class="cajitasAtras"><p class="textos">${film.description}"</p>
-//     <p class="textos">Director: ${film.director}</p>
-//     <p class="textos">Producer: ${film.producer}</p>
-//     <p class="textos"> Year: ${film.release_date}</p>
-//     <p class="textos tarjetas">Score: ${film.rt_score}</p></div></div></div>`
-//     movieContainer.insertAdjacentHTML('beforeend', peliculasModal)
-//     });
-// }
-
-// const container = document.getElementsByClassName("container")
-// container.addEventListener("mouseover", mostrarModal())
-// function mostrarModal(){
-//     let moviesModal = document.getElementById("modalMovies")
-//     const pelisModal = modalPelis()
-//     const container = document.getElementsByClassName("container")
-//     container.addEventListener("mouseover", pelisModal)
-// }
-
-// const btn = document.getElementById("pelicula")
-// function btnPelis(){
-//     dataPelis()
-//     const pelisContainers = document.getElementById("peliculas").parentElement
-//     if(pelisContainers.style.display === "none"){
-//         pelisContainers.style.display = "flex"
-//     }else{
-//         pelisContainers.style.display = "none"
-//     }
-// }
-// btn.addEventListener("click", btnPelis)
 

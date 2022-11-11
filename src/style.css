@@ -22,7 +22,7 @@ html{
 
 }
 
-/* <-------Scroll Bar color y diseño Chrome, Edge y Safari */
+/* <-------Inicio Scroll Bar color y diseño Chrome, Edge y Safari */
 body::-webkit-scrollbar{
     width: 10px;
 }
@@ -35,7 +35,22 @@ body::-webkit-scrollbar-thumb{
     background-color: #22045aee;
     border-radius: 35px;
 }
-/* ------->Scroll Bar color y diseño Chrome, Edge y Safari */
+/* ------->Fin Scroll Bar color y diseño Chrome, Edge y Safari */
+
+p{
+    display: inline-block;
+    padding: 5px 5px;
+    margin-top: 10px;
+    margin-left: 5px;
+    width: 800px;
+    height: 300;
+    font-size: 30;
+    font-family: 'Fuzzy Bubbles', cursive;
+    background-color: #150c1c85;
+    color: #E7E7FF;
+    border-radius: 10px;
+    text-align: center;
+}
 
 .menu{
     max-width: 40px;
@@ -54,6 +69,7 @@ nav{
     padding-left: 1px;
     padding-right: 1px;
     position: fixed;
+    z-index: 100;
 
     @media (max-width: (20rem * 1.6)){
         max-height: 200px;
@@ -72,19 +88,6 @@ nav{
     opacity: 70%;
 }
 
-.menu{
-    max-height: 95%;
-    padding-top: 4%;
-    display: flex;
-    justify-content: flex-end;
-}
-
-ul{
-    float: right;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
 /* ------->Fin nav */
 
 #ghibli{
@@ -111,7 +114,7 @@ ul{
     padding-left: .8%;
     border-radius: 10px;
     margin-left: 32.5%;
-    margin-top: -3.5%;
+    margin-top: 1%;
     width: 25%;
     height: 50%;
     background-color: #d5baefaf;
@@ -143,40 +146,6 @@ ul{
     /* font-weight: bold; */
     color: #22045aee;
 }
-
-p{
-        display: inline-block;
-        padding: 5px 5px;
-        margin-top: 10px;
-        margin-left: 5px;
-        width: 800px;
-        height: 300;
-        font-size: 30;
-        font-family: 'Fuzzy Bubbles', cursive;
-        background-color: #150c1c85;
-        color: #E7E7FF;
-        border-radius: 10px;
-        text-align: center;
-    }
-
-/* -------<Inicio ocultar divs */
-/* #peliculas{
-    
-
-}
-
-#personajes{
-   
-}
-
-#locaciones{
-    
-}
-
-#vehiculos{
-    
-} */
-/* ------->Fin ocultar divs */
 
 #buttonsMovie{
     margin-top: -3rem;
