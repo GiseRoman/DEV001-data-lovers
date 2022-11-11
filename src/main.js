@@ -3,21 +3,40 @@
 import data from './data/ghibli/ghibli.js';
 
 //<----------------Inicio Buscador--------------
-document.addEventListener('keyup',e => {
-    if(e.target.matches("#buscador")){
-     document.querySelectorAll('.container').forEach(buscarTitulos=>{
-        buscarTitulos.textContent.toLowerCase().includes(e.target.value)
-         ?buscarTitulos.style.display = "flex"
-         :buscarTitulos.style.display = "none"
-     })
+
+let resultadoInit = document.getElementById("resultadoBusqueda").parentElement
+resultadoInit.style.display = "none"
+const buscador = document.querySelector("#buscador")
+const botonBuscador = document.querySelector("#boton")
+const resultadoBusqueda = document.querySelector("#resultadoBusqueda")
+
+const buscar = () => {
+    console.log(buscador.value)
+    resultadoBusqueda.innerHTML = ''
+
+    const textoBusqueda = buscador
+    for (let film of data.films){
+        let titulo = film.title
+        if(titulo.indexOf(textoBusqueda) != -1){
+            resultadoBusqueda.innerHTML += `
+            <p class="titulos">${film.title}</p>`
+        }
+        // let direct = film.director.toLowerCase()
+        // let produc = film.producer.toLowerCase()
+        // let persona = film.people
     }
-   })
-//<----------------Inicio Buscador--------------
+    if(resultadoBusqueda.innerHTML === ''){
+        resultadoInit.style.display = "flex"
+        resultadoBusqueda.innerHTML += `
+        <p>Lo sentimos, no encontramos lo que buscabas</p>
+        `
+    }
+}
 
-//<----------------Ordenamiento--------------
+botonBuscador.addEventListener('click', buscar)
 
+//<----------------Fin Buscador--------------
 
-//<----------------Ordenamiento--------------
 
 //<----------------Inicio trabajar las tarjetas de data--------------
 let moviesInit = document.getElementById("peliculas").parentElement
@@ -28,37 +47,17 @@ let locationsInit = document.getElementById("locaciones").parentElement
 locationsInit.style.display = "none"
 let vehiclesInit = document.getElementById("vehiculos").parentElement
 vehiclesInit.style.display = "none"
-let descripcionInit = document.getElementById("descripcion")
-descripcionInit.style.display = "flex"
-let moviesOrden = document.getElementById("buttonsMovie")
-moviesOrden.style.display = "none"
-let characterOrden = document.getElementById("buttonsCharacter")
-characterOrden.style.display = "none"
-let locationOrden = document.getElementById("buttonsLocation")
-locationOrden.style.display = "none"
-let vehicleOrden = document.getElementById("buttonsVehicle")
-vehicleOrden.style.display = "none"
-let ghibliImagen = document.getElementById("ghibli")
-let buscadorOculto = document.getElementById("containerBuscador")
-buscadorOculto.style.display = "none"
 
 
 //llamar a la data desde el boton Movie
 const btn = document.getElementById("pelicula")
-const btnPelis = () => {
+function btnPelis(){
     const pelisContainers = document.getElementById("peliculas").parentElement
     if(pelisContainers.style.display === "none"){
         pelisContainers.style.display = "flex"
-        moviesOrden.style.display = "flex"
-        buscadorOculto.style.display = "flex"
-        characterOrden.style.display = "none"
-        locationOrden.style.display = "none"
-        vehicleOrden.style.display = "none"
         locationsInit.style.display = "none"
         vehiclesInit.style.display = "none"
         peoplesInit.style.display = "none"
-        descripcionInit.style.display = "none"
-        ghibliImagen.style.display = "none"
     }else{
         pelisContainers.style.display = "none"
     }
@@ -88,17 +87,9 @@ function btnPerson(){
     const peoplesContainers = document.getElementById("personajes").parentElement
     if(peoplesContainers.style.display === "none"){
         peoplesContainers.style.display = "flex"
-        characterOrden.style.display = "flex"
-        buscadorOculto.style.display = "flex"
-        moviesOrden.style.display = "none"
-        locationOrden.style.display = "none"
-        vehicleOrden.style.display = "none"
         moviesInit.style.display = "none"
         locationsInit.style.display = "none"
         vehiclesInit.style.display = "none"
-        descripcionInit.style.display = "none"
-        moviesOrden.style.display = "none"
-        ghibliImagen.style.display = "none"
     }else{
         peoplesContainers.style.display = "none"
     }
@@ -131,17 +122,9 @@ function btnLocacion(){
     const locationsContainers = document.getElementById("locaciones").parentElement
     if(locationsContainers.style.display === "none"){
         locationsContainers.style.display = "flex"
-        locationOrden.style.display = "flex"
-        buscadorOculto.style.display = "flex"
-        moviesOrden.style.display = "none"
-        characterOrden.style.display = "none"
-        vehicleOrden.style.display = "none"
         moviesInit.style.display = "none"
         peoplesInit.style.display = "none"
         vehiclesInit.style.display = "none"
-        descripcionInit.style.display = "none"
-        moviesOrden.style.display = "none"
-        ghibliImagen.style.display = "none"
     }else{
         locationsContainers.style.display = "none"
     }
@@ -172,17 +155,9 @@ function btnvehiculo(){
     const vehiclesContainers = document.getElementById("vehiculos").parentElement
     if(vehiclesContainers.style.display === "none"){
         vehiclesContainers.style.display = "flex"
-        vehicleOrden.style.display = "flex"
-        buscadorOculto.style.display = "flex"
-        moviesOrden.style.display = "none"
-        characterOrden.style.display = "none"
-        locationOrden.style.display = "none"
         moviesInit.style.display = "none"
         locationsInit.style.display = "none"
         peoplesInit.style.display = "none"
-        descripcionInit.style.display = "none"
-        moviesOrden.style.display = "none"
-        ghibliImagen.style.display = "none"
     }else{
         vehiclesContainer.style.display = "none"
     }
@@ -208,3 +183,57 @@ data.films.forEach(film =>{
 })
 
 //<----------------Fin trabajar las tarjetas de data--------------
+
+
+
+
+// intentos fallidos
+
+// const movieContainer = document.getElementById('peliculas')
+
+// //mostrar data de peliculas
+// const dataPelis = () => {
+//     data.films.forEach(film=>{
+//     let moviesInit = document.getElementById("peliculas").parentElement
+//     moviesInit.style.display = "none"
+//     const peliculas = `<div class="container" id="contenedor"> <div class="cajitasFrente">
+//     <img class="posters" src="${film.poster}" width="157" height="202"></img>
+//     <p class="titulos">${film.title}</p></div></div>`
+//     movieContainer.insertAdjacentHTML('beforeend', peliculas)
+//     });
+// }
+
+// const modalPelis = () =>{
+//     data.films.forEach(film=>{
+//     let moviesModal = document.getElementById("modalMovies")
+//     moviesModal.style.display = "none"
+//     const peliculasModal = `<div class="containerModal">
+//     <div class="cajitasAtras"><p class="textos">${film.description}"</p>
+//     <p class="textos">Director: ${film.director}</p>
+//     <p class="textos">Producer: ${film.producer}</p>
+//     <p class="textos"> Year: ${film.release_date}</p>
+//     <p class="textos tarjetas">Score: ${film.rt_score}</p></div></div></div>`
+//     movieContainer.insertAdjacentHTML('beforeend', peliculasModal)
+//     });
+// }
+
+// const container = document.getElementsByClassName("container")
+// container.addEventListener("mouseover", mostrarModal())
+// function mostrarModal(){
+//     let moviesModal = document.getElementById("modalMovies")
+//     const pelisModal = modalPelis()
+//     const container = document.getElementsByClassName("container")
+//     container.addEventListener("mouseover", pelisModal)
+// }
+
+// const btn = document.getElementById("pelicula")
+// function btnPelis(){
+//     dataPelis()
+//     const pelisContainers = document.getElementById("peliculas").parentElement
+//     if(pelisContainers.style.display === "none"){
+//         pelisContainers.style.display = "flex"
+//     }else{
+//         pelisContainers.style.display = "none"
+//     }
+// }
+// btn.addEventListener("click", btnPelis
