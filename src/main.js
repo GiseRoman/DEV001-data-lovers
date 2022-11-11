@@ -3,36 +3,43 @@ import data from './data/ghibli/ghibli.js';
 
 //<----------------Inicio Buscador--------------
 
-let resultadoInit = document.getElementById("resultadoBusqueda").parentElement
-resultadoInit.style.display = "none"
-const buscador = document.querySelector("#buscador")
-const botonBuscador = document.querySelector("#boton")
-const resultadoBusqueda = document.querySelector("#resultadoBusqueda")
+// const buscador = document.querySelector("#buscador")
+// const botonBuscador = document.querySelector("#boton")
+// const resultadoBusqueda = document.querySelector("#resultadoBusqueda")
+// const resultadoInit = document.querySelector("#resultadoBusqueda")
+// resultadoInit.style.display = "none"
 
-const buscar = () => {
-    console.log(buscador.value)
-    resultadoBusqueda.innerHTML = ''
+// let  encontrar = data.films.filter(film => {
+//     if(film.title.indexOf(buscador) != -1){
+//         resultadoInit.style.display = "flex"
+//         resultadoBusqueda.innerHTML += `
+//         <p class="titulos">${film.title}</p>`
+//     }
+// }
+// console.log(encontrar)
+// const buscar = () => {
+//     resultadoBusqueda.innerHTML = ''
+//     const textoBusqueda = buscador
+//     for (let film of data.films){
+//         if(film.indexOf(textoBusqueda) != -1){
+//             resultadoInit.style.display = "flex"
+//             resultadoBusqueda.innerHTML += `
+//             <p class="titulos">${film.title}</p>`
+//         }
+//         // let direct = film.director.toLowerCase()
+//         // let produc = film.producer.toLowerCase()
+//         // let persona = film.people
+//     }
+//     if(resultadoBusqueda.innerHTML === ''){
+//         resultadoInit.style.display = "flex"
+//         resultadoBusqueda.innerHTML += `
+//         <p>Lo sentimos, no encontramos lo que buscabas</p>
+//         `
+//     }
+// }
 
-    const textoBusqueda = buscador
-    for (let film of data.films){
-        let titulo = film.title
-        if(titulo.indexOf(textoBusqueda) != -1){
-            resultadoBusqueda.innerHTML += `
-            <p class="titulos">${film.title}</p>`
-        }
-        // let direct = film.director.toLowerCase()
-        // let produc = film.producer.toLowerCase()
-        // let persona = film.people
-    }
-    if(resultadoBusqueda.innerHTML === ''){
-        resultadoInit.style.display = "flex"
-        resultadoBusqueda.innerHTML += `
-        <p>Lo sentimos, no encontramos lo que buscabas</p>
-        `
-    }
-}
-
-botonBuscador.addEventListener('click', buscar)
+// botonBuscador.addEventListener('click', buscar)
+// buscador.addEventListener('keyup', buscar)
 
 //<----------------Fin Buscador--------------
 
@@ -46,6 +53,19 @@ let locationsInit = document.getElementById("locaciones").parentElement
 locationsInit.style.display = "none"
 let vehiclesInit = document.getElementById("vehiculos").parentElement
 vehiclesInit.style.display = "none"
+let descripcionInit = document.getElementById("descripcion")
+descripcionInit.style.display = "flex"
+let moviesOrden = document.getElementById("buttonsMovie")
+moviesOrden.style.display = "none"
+let characterOrden = document.getElementById("buttonsCharacter")
+characterOrden.style.display = "none"
+let locationOrden = document.getElementById("buttonsLocation")
+locationOrden.style.display = "none"
+let vehicleOrden = document.getElementById("buttonsVehicle")
+vehicleOrden.style.display = "none"
+let ghibliImagen = document.getElementById("ghibli")
+let buscadorOculto = document.getElementById("containerBuscador")
+buscadorOculto.style.display = "none"
 
 
 //llamar a la data desde el boton Movie
@@ -54,9 +74,16 @@ function btnPelis(){
     const pelisContainers = document.getElementById("peliculas").parentElement
     if(pelisContainers.style.display === "none"){
         pelisContainers.style.display = "flex"
+        moviesOrden.style.display = "flex"
+        buscadorOculto.style.display = "flex"
+        characterOrden.style.display = "none"
+        locationOrden.style.display = "none"
+        vehicleOrden.style.display = "none"
         locationsInit.style.display = "none"
         vehiclesInit.style.display = "none"
         peoplesInit.style.display = "none"
+        descripcionInit.style.display = "none"
+        ghibliImagen.style.display = "none"
     }else{
         pelisContainers.style.display = "none"
     }
@@ -86,9 +113,17 @@ function btnPerson(){
     const peoplesContainers = document.getElementById("personajes").parentElement
     if(peoplesContainers.style.display === "none"){
         peoplesContainers.style.display = "flex"
+        characterOrden.style.display = "flex"
+        buscadorOculto.style.display = "flex"
+        moviesOrden.style.display = "none"
+        locationOrden.style.display = "none"
+        vehicleOrden.style.display = "none"
         moviesInit.style.display = "none"
         locationsInit.style.display = "none"
         vehiclesInit.style.display = "none"
+        descripcionInit.style.display = "none"
+        moviesOrden.style.display = "none"
+        ghibliImagen.style.display = "none"
     }else{
         peoplesContainers.style.display = "none"
     }
@@ -121,9 +156,17 @@ function btnLocacion(){
     const locationsContainers = document.getElementById("locaciones").parentElement
     if(locationsContainers.style.display === "none"){
         locationsContainers.style.display = "flex"
+        locationOrden.style.display = "flex"
+        buscadorOculto.style.display = "flex"
+        moviesOrden.style.display = "none"
+        characterOrden.style.display = "none"
+        vehicleOrden.style.display = "none"
         moviesInit.style.display = "none"
         peoplesInit.style.display = "none"
         vehiclesInit.style.display = "none"
+        descripcionInit.style.display = "none"
+        moviesOrden.style.display = "none"
+        ghibliImagen.style.display = "none"
     }else{
         locationsContainers.style.display = "none"
     }
@@ -154,9 +197,17 @@ function btnvehiculo(){
     const vehiclesContainers = document.getElementById("vehiculos").parentElement
     if(vehiclesContainers.style.display === "none"){
         vehiclesContainers.style.display = "flex"
+        vehicleOrden.style.display = "flex"
+        buscadorOculto.style.display = "flex"
+        moviesOrden.style.display = "none"
+        characterOrden.style.display = "none"
+        locationOrden.style.display = "none"
         moviesInit.style.display = "none"
         locationsInit.style.display = "none"
         peoplesInit.style.display = "none"
+        descripcionInit.style.display = "none"
+        moviesOrden.style.display = "none"
+        ghibliImagen.style.display = "none"
     }else{
         vehiclesContainer.style.display = "none"
     }
@@ -184,8 +235,41 @@ data.films.forEach(film =>{
 //<----------------Fin trabajar las tarjetas de data--------------
 
 
+document.addEventListener('keyup',e => {
+    if(e.target.matches("#buscador")){
+     document.querySelectorAll('.container').forEach(buscarTitulos=>{
+        console.log(buscarTitulos.textContent.toLowerCase().includes(e.target.value)
+         ?buscarTitulos.classList.remove('filtro')
+         :buscarTitulos.classList.add('filtro'))
+     })
+    }
+   })
+ 
 
 
+// let resultadosInit = document.getElementById("resultadoBusqueda").parentElement
+// resultadosInit.style.display = "none"
+
+// const tarjetas = document.querySelectorAll('.titulos')
+
+// tarjetas.forEach(tarjeta => {
+//     console.log(tarjeta)
+    
+// })
+
+
+// const infoBusqueda = buscador.value.toLowerCase()
+
+// botonBuscador.addEventListener('keyup', () =>{
+//     tarjetas.forEach(objetoTitulo => {
+//         resultadosInit.style.display = "flex"
+//         resultadosInit.insertAdjacentHTML('beforeend', objetoTitulo)
+//     })
+// })
+
+// const ghibli = data.films
+
+// ghibli.people
 // intentos fallidos
 
 // const movieContainer = document.getElementById('peliculas')
