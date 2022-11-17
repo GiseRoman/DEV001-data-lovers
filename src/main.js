@@ -13,7 +13,7 @@ const filmHTMLarr = []
 const peopleHTMLarr = []
 const locationHTMLarr = []
 const vehicleHTMLarr = []
-const searchHTMLarr = []
+let searchHTMLarr = []
 const btnOrdenAZ = document.getElementById("peliculaAZ")
 
 // <-----Inicio Vaciar contenedor principal-----
@@ -22,9 +22,9 @@ const cleanContainer = () => {
 }
 // <-----Fin Vaciar contenedor principal-----
 
-// <-----Inicio Buscar-----
-
-buscador.addEventListener('keyup', e => {
+// <-----Inicio Buscador-----
+const buscar = (e => {
+    searchHTMLarr = []
     cleanContainer()
     const find = data.films.filter(film => film.title.toLowerCase().includes(buscador.value.toLowerCase()))
     find.forEach(encuentra => {
@@ -32,13 +32,38 @@ buscador.addEventListener('keyup', e => {
         <img class="posters" src="${encuentra.poster}" width="157" height="202"></img>
         <p class="titulos">${encuentra.title}</p></div></div>`)
     })
-    // console.log(busquedas)
+    personajes.forEach(peoples =>{
+        const findPeop = peoples.filter(people => people.name.toLowerCase().includes(buscador.value.toLowerCase()))
+        findPeop.forEach(encuentra => {
+            searchHTMLarr.push(`<div class="container" id="contenedor"> <div class="cajitasFrente">
+            <img class="posters" src="${encuentra.img}" width="157" height="202"></img>
+            <p class="titulos">${encuentra.name}</p></div></div>`)
+        })
+    })
+    lugares.forEach(locations =>{
+        const findLoc = locations.filter(location => location.name.toLowerCase().includes(buscador.value.toLowerCase()))
+        findLoc.forEach(encuentra => {
+            searchHTMLarr.push(`<div class="container" id="contenedor"> <div class="cajitasFrente">
+            <img class="posters" src="${encuentra.img}" width="157" height="202"></img>
+            <p class="titulos">${encuentra.name}</p></div></div>`)
+        })
+    })
+    vehiculos.forEach(vehicles =>{
+        const findVehic = vehicles.filter(vehicle => vehicle.name.toLowerCase().includes(buscador.value.toLowerCase()))
+        findVehic.forEach(encuentra => {
+            searchHTMLarr.push(`<div class="container" id="contenedor"> <div class="cajitasFrente">
+            <img class="posters" src="${encuentra.img}" width="157" height="202"></img>
+            <p class="titulos">${encuentra.name}</p></div></div>`)
+        })
+    })
 })
 
+buscador.addEventListener('keyup', buscar)
+console.log(searchHTMLarr)
 btnSearch.addEventListener('click',() => {cleanContainer()
-    allContainer.insertAdjacentHTML('beforeend', searchHTMLarr)})
+allContainer.insertAdjacentHTML('beforeend', searchHTMLarr)})
 
-// <-----Fin Buscar-----
+// <-----Fin Buscador-----
 
 
 // <-----Inicio mostrar peliculas-----
