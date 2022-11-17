@@ -3,8 +3,8 @@ import { personajes, lugares, vehiculos, organizarAZ } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
 const buscador = document.querySelector('#buscador')
-
-const allContainer = document.getElementById('allContainer');
+const allContainer = document.getElementById('allContainer')
+const btnSearch = document.querySelector('#boton')
 const btn1 =document.getElementById("pelicula")
 const btn2 = document.getElementById("personaje")
 const btn3 = document.getElementById("locacion")
@@ -13,6 +13,7 @@ const filmHTMLarr = []
 const peopleHTMLarr = []
 const locationHTMLarr = []
 const vehicleHTMLarr = []
+let searchHTMLarr = []
 const btnOrdenAZ = document.getElementById("peliculaAZ")
 
 // <-----Inicio Vaciar contenedor principal-----
@@ -22,19 +23,19 @@ const cleanContainer = () => {
 // <-----Fin Vaciar contenedor principal-----
 const encontrados = []
 buscador.addEventListener('keyup', e => {
-    document.querySelectorAll('.')
-    const findPeople = data.films.filter(film => film.title.toLowerCase().includes(e.target.value))
+    const findPeople = data.films.filter(film => film.title.toLowerCase().includes(buscador.value.toLowerCase()))
     console.log(findPeople)
     encontrados.push(findPeople)
     console.log(encontrados)
 })
-buscador.addEventListener('click', () => {cleanContainer()
-    allContainer.insertAdjacentHTML('beforeend', filmHTMLarr)})
 // <-----Inicio Buscar peliculas-----
 
-const btnSearch = document.querySelector('#boton')
+buscador.addEventListener('keyup', buscar)
+console.log(searchHTMLarr)
+btnSearch.addEventListener('click',() => {cleanContainer()
+allContainer.insertAdjacentHTML('beforeend', searchHTMLarr)})
 
-// <-----Fin Buscar peliculas-----
+// <-----Fin Buscador-----
 
 
 // <-----Inicio mostrar peliculas-----
@@ -84,12 +85,3 @@ vehiculos.forEach(vehicle => {
 btn4.addEventListener('click', ()=>{cleanContainer() 
     allContainer.insertAdjacentHTML('beforeend',vehicleHTMLarr)})
 // <-----Fin mostrar vehiculos-----
-
-// const buscar = personajes.filter(peoples => {
-//     peoples.forEach() {
-//     const texto = buscador.value
-//     peoples.name === texto.value
-//     }})
-//     console.log(buscar)
-// btnSearch.addEventListener('click', buscar)
-// buscador.addEventListener('keyup', buscar)
