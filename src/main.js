@@ -15,23 +15,57 @@ const locationHTMLarr = []
 const vehicleHTMLarr = []
 let searchHTMLarr = []
 const btnOrdenAZ = document.getElementById("peliculaAZ")
+const descripcion = document.getElementById("descripcion")
+
+descripcion.insertAdjacentHTML('beforeend', `<p> Studio Ghibli was founded by manga animator, director, producer, screenwriter, author, and artist Hayao Miyazaki; Japanese film director Isao Takahata; and producer Toshio Suzuki. Takahata and Miyazaki met in the 1960s when they were both working for the Japanese animation studio Tôei Dôga. Although they collaborated for more than a decade, it was not until the mid-1980s that they decided to start their own company. In 1985, with funding from publisher Tokuma Shoten, Takahata, Miyazaki, and Suzuki founded Studio Ghibli, a small production studio in suburban Tokyo.
+</p>`)
 
 // <-----Inicio Vaciar contenedor principal-----
 const cleanContainer = () => {
     allContainer.innerHTML = ''
+    descripcion.innerHTML = ''
 }
 // <-----Fin Vaciar contenedor principal-----
-const encontrados = []
-buscador.addEventListener('keyup', e => {
-    const findPeople = data.films.filter(film => film.title.toLowerCase().includes(buscador.value.toLowerCase()))
-    console.log(findPeople)
-    encontrados.push(findPeople)
-    console.log(encontrados)
+const buscar = (e => {
+    searchHTMLarr = []
+    cleanContainer()
+    const find = data.films.filter(film => film.title.toLowerCase().includes(buscador.value.toLowerCase()))
+    find.forEach(encuentra => {
+        searchHTMLarr.push(`<div class="container" id="contenedor"> <div class="cajitasFrente">
+        <img class="posters" src="${encuentra.poster}" width="157" height="202"></img>
+        <p class="titulos">${encuentra.title}</p></div></div>`)
+    })
+    personajes.forEach(peoples =>{
+        const findPeop = peoples.filter(people => people.name.toLowerCase().includes(buscador.value.toLowerCase()))
+        findPeop.forEach(encuentra => {
+            searchHTMLarr.push(`<div class="container" id="contenedor"> <div class="cajitasFrente">
+            <img class="posters" src="${encuentra.img}" width="157" height="202"></img>
+            <p class="titulos">${encuentra.name}</p></div></div>`)
+        })
+    })
+    lugares.forEach(locations =>{
+        const findLoc = locations.filter(location => location.name.toLowerCase().includes(buscador.value.toLowerCase()))
+        findLoc.forEach(encuentra => {
+            searchHTMLarr.push(`<div class="container" id="contenedor"> <div class="cajitasFrente">
+            <img class="posters" src="${encuentra.img}" width="157" height="202"></img>
+            <p class="titulos">${encuentra.name}</p></div></div>`)
+        })
+    })
+    vehiculos.forEach(vehicles =>{
+        const findVehic = vehicles.filter(vehicle => vehicle.name.toLowerCase().includes(buscador.value.toLowerCase()))
+        findVehic.forEach(encuentra => {
+            searchHTMLarr.push(`<div class="container" id="contenedor"> <div class="cajitasFrente">
+            <img class="posters" src="${encuentra.img}" width="157" height="202"></img>
+            <p class="titulos">${encuentra.name}</p></div></div>`)
+        })
+    })
 })
+
 buscador.addEventListener('keyup', buscar)
 console.log(searchHTMLarr)
 btnSearch.addEventListener('click',() => {cleanContainer()
-allContainer.insertAdjacentHTML('beforeend', searchHTMLarr)})
+    allContainer.insertAdjacentHTML('beforeend', searchHTMLarr)})
+
 
 // <-----Fin Buscador-----
 
@@ -45,6 +79,7 @@ data.films.forEach(film => {
 )
 })
 btn1.addEventListener('click', () => {cleanContainer()
+    allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll">Peliculas de Studio Ghibli</div>`)
     allContainer.insertAdjacentHTML('beforeend', filmHTMLarr)})
 // <-----Fin mostrar peliculas-----
 
@@ -57,6 +92,7 @@ personajes.forEach(persons => {
     <p class="titulos">${person.name}</p></div></div>`)
 })})
 btn2.addEventListener('click', ()=>{cleanContainer() 
+    allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Personajes de Studio Ghibli</div>`)
     allContainer.insertAdjacentHTML('beforeend',peopleHTMLarr)})
 // <-----Fin mostrar personajes-----
 
@@ -69,6 +105,7 @@ lugares.forEach(locaciones => {
     <p class="titulos">${locacion.name}</p></div></div>`)
 })})
 btn3.addEventListener('click', ()=>{cleanContainer() 
+    allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Locaciones de Studio Ghibli</div>`)
     allContainer.insertAdjacentHTML('beforeend',locationHTMLarr)})
 // <-----Fin mostrar luares-----
 
@@ -81,5 +118,6 @@ vehiculos.forEach(vehicle => {
     <p class="titulos">${vehiculo.name}</p></div></div>`)
 })})
 btn4.addEventListener('click', ()=>{cleanContainer() 
+    allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Vehiculos de Studio Ghibli</div>`)
     allContainer.insertAdjacentHTML('beforeend',vehicleHTMLarr)})
 // <-----Fin mostrar vehiculos-----
