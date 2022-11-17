@@ -1,4 +1,4 @@
-// import { example } from './data.js';
+// / import { example } from './data.js';
 import { personajes, lugares, vehiculos, organizarAZ } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
@@ -21,41 +21,12 @@ const cleanContainer = () => {
     allContainer.innerHTML = ''
 }
 // <-----Fin Vaciar contenedor principal-----
-
-// <-----Inicio Buscador-----
-const buscar = (e => {
-    searchHTMLarr = []
-    cleanContainer()
-    const find = data.films.filter(film => film.title.toLowerCase().includes(buscador.value.toLowerCase()))
-    find.forEach(encuentra => {
-        searchHTMLarr.push(`<div class="container" id="contenedor"> <div class="cajitasFrente">
-        <img class="posters" src="${encuentra.poster}" width="157" height="202"></img>
-        <p class="titulos">${encuentra.title}</p></div></div>`)
-    })
-    personajes.forEach(peoples =>{
-        const findPeop = peoples.filter(people => people.name.toLowerCase().includes(buscador.value.toLowerCase()))
-        findPeop.forEach(encuentra => {
-            searchHTMLarr.push(`<div class="container" id="contenedor"> <div class="cajitasFrente">
-            <img class="posters" src="${encuentra.img}" width="157" height="202"></img>
-            <p class="titulos">${encuentra.name}</p></div></div>`)
-        })
-    })
-    lugares.forEach(locations =>{
-        const findLoc = locations.filter(location => location.name.toLowerCase().includes(buscador.value.toLowerCase()))
-        findLoc.forEach(encuentra => {
-            searchHTMLarr.push(`<div class="container" id="contenedor"> <div class="cajitasFrente">
-            <img class="posters" src="${encuentra.img}" width="157" height="202"></img>
-            <p class="titulos">${encuentra.name}</p></div></div>`)
-        })
-    })
-    vehiculos.forEach(vehicles =>{
-        const findVehic = vehicles.filter(vehicle => vehicle.name.toLowerCase().includes(buscador.value.toLowerCase()))
-        findVehic.forEach(encuentra => {
-            searchHTMLarr.push(`<div class="container" id="contenedor"> <div class="cajitasFrente">
-            <img class="posters" src="${encuentra.img}" width="157" height="202"></img>
-            <p class="titulos">${encuentra.name}</p></div></div>`)
-        })
-    })
+const encontrados = []
+buscador.addEventListener('keyup', e => {
+    const findPeople = data.films.filter(film => film.title.toLowerCase().includes(buscador.value.toLowerCase()))
+    console.log(findPeople)
+    encontrados.push(findPeople)
+    console.log(encontrados)
 })
 buscador.addEventListener('keyup', buscar)
 console.log(searchHTMLarr)
