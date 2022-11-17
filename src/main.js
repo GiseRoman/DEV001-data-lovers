@@ -22,11 +22,14 @@ const cleanContainer = () => {
 // <-----Fin Vaciar contenedor principal-----
 const encontrados = []
 buscador.addEventListener('keyup', e => {
-    const findPeople = data.films.filter(film => film.title.toLowerCase().includes(buscador.value.toLowerCase()))
+    document.querySelectorAll('.')
+    const findPeople = data.films.filter(film => film.title.toLowerCase().includes(e.target.value))
     console.log(findPeople)
     encontrados.push(findPeople)
     console.log(encontrados)
 })
+buscador.addEventListener('click', () => {cleanContainer()
+    allContainer.insertAdjacentHTML('beforeend', filmHTMLarr)})
 // <-----Inicio Buscar peliculas-----
 
 const btnSearch = document.querySelector('#boton')
