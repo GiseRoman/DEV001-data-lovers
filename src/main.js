@@ -1,4 +1,4 @@
-// import { example } from './data.js';
+// / import { example } from './data.js';
 import { personajes, lugares, vehiculos, organizarAZ } from './data.js';
 import data from './data/ghibli/ghibli.js';
 
