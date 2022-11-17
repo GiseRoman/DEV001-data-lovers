@@ -57,7 +57,6 @@ const buscar = (e => {
         })
     })
 })
-
 buscador.addEventListener('keyup', buscar)
 console.log(searchHTMLarr)
 btnSearch.addEventListener('click',() => {cleanContainer()
@@ -75,7 +74,7 @@ data.films.forEach(film => {
 )
 })
 btn1.addEventListener('click', () => {cleanContainer()
-allContainer.insertAdjacentHTML('beforeend', filmHTMLarr)})
+    allContainer.insertAdjacentHTML('beforeend', filmHTMLarr)})
 // <-----Fin mostrar peliculas-----
 
 // <-----Inicio mostrar personajes-----
