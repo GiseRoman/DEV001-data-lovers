@@ -54,6 +54,18 @@ export const organizarZAFilm = (array, property) => {
         })
     }
 
+export const organizarEspecie = (array, property) => {
+    return array.flat().sort(function (a, b) {
+        if (a.specie < b.specie) {
+            return -1;
+        }
+        if (a.specie > b.specie) {
+            return 1;
+        }
+        return 0;
+        });
+    }
+
 
 // export const anotherExample = () => {
 //   return 'OMG';
