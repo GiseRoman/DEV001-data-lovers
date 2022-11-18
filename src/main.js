@@ -56,7 +56,7 @@ const cleanSearch = () => {
 
 // <-----Inicio Buscador-----
 
-const buscar = (e => {
+const buscar = () => {
     searchHTMLarr = []
     cleanContainer()
     allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Search matches</div>`)
@@ -98,10 +98,9 @@ const buscar = (e => {
             </div></div>`)
         })
     })
-})
+}
 
 buscador.addEventListener('keyup', buscar)
-console.log(searchHTMLarr)
 btnSearch.addEventListener('click',() => {
     cleanContainer()
     allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Search matches</div>`)
@@ -190,7 +189,6 @@ btn4.addEventListener('click', ()=>{
 // Ordenamiento AZ characters, locations & vehicles
 btnOrdenAZ.addEventListener('click', () => {
     const filterSelected = allContainer.getAttribute("filter")
-    console.log(filterSelected)
     if(filterSelected === "characters"){
         const sortedCharacter = organizarAZ(personajes, "name")
         cleanContainer()
@@ -233,7 +231,6 @@ btnOrdenAZ.addEventListener('click', () => {
 // Ordenamiento AZ Movie
 btnOrdenAZ.addEventListener('click', () => {
     const filterSelectedMovie = allContainer.getAttribute("filter")
-    console.log(filterSelectedMovie)
     if(filterSelectedMovie === "movies"){
         const sortedMovie = organizarAZFilm(peliculas, "title")
         cleanContainer()
@@ -252,7 +249,6 @@ btnOrdenAZ.addEventListener('click', () => {
 // Ordenamiento ZA characters, locations & vehicles
 btnOrdenZA.addEventListener('click', () => {
     const filterSelectedZA = allContainer.getAttribute("filter")
-    console.log(filterSelectedZA)
     if(filterSelectedZA === "characters"){
         const sortedCharacterZA = organizarZA(personajes, "name")
         cleanContainer()
@@ -295,7 +291,6 @@ btnOrdenZA.addEventListener('click', () => {
 // Ordenamiento ZA Movie
 btnOrdenZA.addEventListener('click', () => {
     const filterSelectedMovieZA = allContainer.getAttribute("filter")
-    console.log(filterSelectedMovieZA)
     if(filterSelectedMovieZA === "movies"){
         const sortedMovieZA = organizarZAFilm(peliculas, "title")
         cleanContainer()
@@ -314,7 +309,6 @@ btnOrdenZA.addEventListener('click', () => {
 // Ordenamiento por Especie
 btnOrdenEspecie.addEventListener('click', () => {
     const filterSelectedSpecie = allContainer.getAttribute("filter")
-    console.log(filterSelectedSpecie)
     if(filterSelectedSpecie === "characters"){
         const sortedCharacterSpecie = organizarEspecie(personajes, "name")
         cleanContainer()
@@ -322,7 +316,7 @@ btnOrdenEspecie.addEventListener('click', () => {
         allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Characers of Studio Ghibli by species</div>`)
         sortedCharacterSpecie.forEach(character =>{ 
             allContainer.insertAdjacentHTML('beforeend', `<div class="container" id="contenedor"> <div class="cajitasFrente">
-            <p class="titulos">${character.specie} <br>${character.name}</p>
+            <p class="titulos">Specie: ${character.specie} <br>Name: ${character.name}</p>
             <img class="posters" src="${character.img}" width="157" height="202"></img>
             <button class="botonModal" id="boton">Saber mas...</button>
             </div></div>`)

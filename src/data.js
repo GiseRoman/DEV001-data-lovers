@@ -6,7 +6,7 @@ export const lugares = data.films.map(film => film.locations)
 export const vehiculos = data.films.map(film => film.vehicles)
 export const peliculas = data.films
 
-export const organizarAZ = (array, property) => {
+export const organizarAZ = (array) => {
     return array.flat().sort(function (a, b) {
         if (a.name < b.name) {
           return -1;
@@ -18,7 +18,7 @@ export const organizarAZ = (array, property) => {
       });
     }
 
-export const organizarAZFilm = (array, property) => {
+export const organizarAZFilm = (array) => {
     return array.flat().sort(function (a, b) {
         if (a.title < b.title) {
             return -1;
@@ -30,7 +30,7 @@ export const organizarAZFilm = (array, property) => {
         })
     }
 
-export const organizarZA = (array, property) => {
+export const organizarZA = (array) => {
     return array.flat().sort(function (a, b) {
         if (a.name > b.name) {
             return -1;
@@ -42,7 +42,7 @@ export const organizarZA = (array, property) => {
         });
     }
 
-export const organizarZAFilm = (array, property) => {
+export const organizarZAFilm = (array) => {
     return array.flat().sort(function (a, b) {
         if (a.title > b.title) {
             return -1;
@@ -54,7 +54,7 @@ export const organizarZAFilm = (array, property) => {
         })
     }
 
-export const organizarEspecie = (array, property) => {
+export const organizarEspecie = (array) => {
     return array.flat().sort(function (a, b) {
         if (a.specie < b.specie) {
             return -1;
@@ -65,19 +65,3 @@ export const organizarEspecie = (array, property) => {
         return 0;
         });
     }
-
-
-// export const anotherExample = () => {
-//   return 'OMG';
-// };
-
-// export const modal = ()=>{
-//     location.onclick = ()=>{
-//         modalLocations.style.display = "block"
-//     }
-//     window.onclick = (event) => {
-//         if (event.target == modalLocations){
-//             modalLocations.style.display = "none"
-//         }
-//     }
-// }
