@@ -19,125 +19,28 @@ const vehicleHTMLarr = []
 let searchHTMLarr = []
 
 // <-----Inicio Mostrar/ocultar introduccion-----
-descripcion.insertAdjacentHTML('beforeend', `<p> Studio Ghibli was founded by manga animator, director, producer, screenwriter, author, and artist Hayao Miyazaki; Japanese film director Isao Takahata; and producer Toshio Suzuki. Takahata and Miyazaki met in the 1960s when they were both working for the Japanese animation studio Tôei Dôga. Although they collaborated for more than a decade, it was not until the mid-1980s that they decided to start their own company. In 1985, with funding from publisher Tokuma Shoten, Takahata, Miyazaki, and Suzuki founded Studio Ghibli, a small production studio in suburban Tokyo.
+descripcion.insertAdjacentHTML('beforeend', `<p> Studio Ghibli was founded by manga animator, director, producer, screenwriter, author, and artist Hayao Miyazaki; Japanese film director Isao Takahata; and producer Toshio Suzuki. Takahata and Miyazaki met in the 1960s when they were both working for the Japanese animation studio Tôei Dôga. Although they collaborated for more than a decade, it was not until the mid-1980s that they decided to start their own company. In 1985, with funding from publisher Tokuma Shoten, Takahata, Miyazaki, and Suzuki founded Studio Ghibli, a production studio in suburban Tokyo.
 </p>`)
 // <-----Fin Mostrar/ocultar introduccion-----
 
 
-// <-----Inicio Vaciar contenedor principal-----
+// <-----Inicio Vaciar contenedores-----
 const cleanContainer = () => {
     allContainer.innerHTML = ''
     descripcion.innerHTML = ''
 }
-// <-----Fin Vaciar contenedor principal-----
 
-// <-----Inicio ordenamientos-----
-// Ordenamiento AZ characters, locations & vehicles
-btnOrdenAZ.addEventListener('click', () => {
-    const filterSelected = allContainer.getAttribute("filter")
-    console.log(filterSelected)
-    if(filterSelected === "characters"){
-        const sortedCharacter = organizarAZ(personajes, "name")
-        cleanContainer()
-        allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Personajes de Studio Ghibli de la A A LA z</div>`)
-        sortedCharacter.forEach(character =>{ 
-            allContainer.insertAdjacentHTML('beforeend', `<div class="container" id="contenedor"> <div class="cajitasFrente">
-            <img class="posters" src="${character.img}" width="157" height="202"></img>
-            <p class="titulos">${character.name}</p></div></div>`)
-        })
-    }else if(filterSelected === "locations"){
-        const sortedLocation = organizarAZ(lugares, "name")
-        cleanContainer()
-        allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Locaciones de Studio Ghibli de la A A LA z</div>`)
-        sortedLocation.forEach(location =>{ 
-            allContainer.insertAdjacentHTML('beforeend', `<div class="container" id="contenedor"> <div class="cajitasFrente">
-            <img class="posters" src="${location.img}" width="157" height="202"></img>
-            <p class="titulos">${location.name}</p></div></div>`)
-        })
-    }else if(filterSelected === "vehicles"){
-        const sortedVehicle = organizarAZ(vehiculos, "name")
-        cleanContainer()
-        allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Vehiculos de Studio Ghibli de la A A LA z</div>`)
-        sortedVehicle.forEach(vehicle =>{ 
-            allContainer.insertAdjacentHTML('beforeend', `<div class="container" id="contenedor"> <div class="cajitasFrente">
-            <img class="posters" src="${vehicle.img}" width="157" height="202"></img>
-            <p class="titulos">${vehicle.name}</p></div></div>`)
-        })
-    }
-})
+const cleanSearch = () => {
+    buscador.value = ''
+}
+// <-----Fin Vaciar contenedores-----
 
-// Ordenamiento AZ Movie
-btnOrdenAZ.addEventListener('click', () => {
-    const filterSelectedMovie = allContainer.getAttribute("filter")
-    console.log(filterSelectedMovie)
-    if(filterSelectedMovie === "movies"){
-        const sortedMovie = organizarAZFilm(peliculas, "title")
-        cleanContainer()
-        allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Peliculas de Studio Ghibli</div>`)
-        sortedMovie.forEach(pelis =>{ 
-            allContainer.insertAdjacentHTML('beforeend', `<div class="container" id="contenedor"> <div class="cajitasFrente">
-            <img class="posters" src="${pelis.poster}" width="157" height="202"></img>
-            <p class="titulos">${pelis.title}</p></div></div>`)
-        })
-    }
-})
-
-// Ordenamiento ZA characters, locations & vehicles
-btnOrdenZA.addEventListener('click', () => {
-    const filterSelectedZA = allContainer.getAttribute("filter")
-    console.log(filterSelectedZA)
-    if(filterSelectedZA === "characters"){
-        const sortedCharacterZA = organizarZA(personajes, "name")
-        cleanContainer()
-        allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Personajes de Studio Ghibli</div>`)
-        sortedCharacterZA.forEach(character =>{ 
-            allContainer.insertAdjacentHTML('beforeend', `<div class="container" id="contenedor"> <div class="cajitasFrente">
-            <img class="posters" src="${character.img}" width="157" height="202"></img>
-            <p class="titulos">${character.name}</p></div></div>`)
-        })
-    }else if(filterSelectedZA === "locations"){
-        const sortedLocationZA = organizarZA(lugares, "name")
-        cleanContainer()
-        allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Locaciones de Studio Ghibli</div>`)
-        sortedLocationZA.forEach(location =>{ 
-            allContainer.insertAdjacentHTML('beforeend', `<div class="container" id="contenedor"> <div class="cajitasFrente">
-            <img class="posters" src="${location.img}" width="157" height="202"></img>
-            <p class="titulos">${location.name}</p></div></div>`)
-        })
-    }else if(filterSelectedZA === "vehicles"){
-        const sortedVehicleZA = organizarZA(vehiculos, "name")
-        cleanContainer()
-        allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Vehiculos de Studio Ghibli</div>`)
-        sortedVehicleZA.forEach(vehicle =>{ 
-            allContainer.insertAdjacentHTML('beforeend', `<div class="container" id="contenedor"> <div class="cajitasFrente">
-            <img class="posters" src="${vehicle.img}" width="157" height="202"></img>
-            <p class="titulos">${vehicle.name}</p></div></div>`)
-        })
-    }
-})
-
-// Ordenamiento ZA Movie
-btnOrdenZA.addEventListener('click', () => {
-    const filterSelectedMovieZA = allContainer.getAttribute("filter")
-    console.log(filterSelectedMovieZA)
-    if(filterSelectedMovieZA === "movies"){
-        const sortedMovieZA = organizarZAFilm(peliculas, "title")
-        cleanContainer()
-        allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Peliculas de Studio Ghibli</div>`)
-        sortedMovieZA.forEach(pelis =>{ 
-            allContainer.insertAdjacentHTML('beforeend', `<div class="container" id="contenedor"> <div class="cajitasFrente">
-            <img class="posters" src="${pelis.poster}" width="157" height="202"></img>
-            <p class="titulos">${pelis.title}</p></div></div>`)
-        })
-    }
-})
-
-// <-----Fin ordenamientos-----
-
+// <-----Inicio Buscador-----
 
 const buscar = (e => {
     searchHTMLarr = []
     cleanContainer()
+    allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Coincidencias de búsqueda</div>`)
     const find = data.films.filter(film => film.title.toLowerCase().includes(buscador.value.toLowerCase()))
     find.forEach(encuentra => {
         searchHTMLarr.push(`<div class="container" id="contenedor"> <div class="cajitasFrente">
@@ -181,6 +84,117 @@ btnSearch.addEventListener('click',() => {
 // <-----Fin Buscador-----
 
 
+// <-----Inicio ordenamientos-----
+// Ordenamiento AZ characters, locations & vehicles
+btnOrdenAZ.addEventListener('click', () => {
+    const filterSelected = allContainer.getAttribute("filter")
+    console.log(filterSelected)
+    if(filterSelected === "characters"){
+        const sortedCharacter = organizarAZ(personajes, "name")
+        cleanContainer()
+        cleanSearch()
+        allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Personajes de Studio Ghibli de la A A LA z</div>`)
+        sortedCharacter.forEach(character =>{ 
+            allContainer.insertAdjacentHTML('beforeend', `<div class="container" id="contenedor"> <div class="cajitasFrente">
+            <img class="posters" src="${character.img}" width="157" height="202"></img>
+            <p class="titulos">${character.name}</p></div></div>`)
+        })
+    }else if(filterSelected === "locations"){
+        const sortedLocation = organizarAZ(lugares, "name")
+        cleanContainer()
+        cleanSearch()
+        allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Locaciones de Studio Ghibli</div>`)
+        sortedLocation.forEach(location =>{ 
+            allContainer.insertAdjacentHTML('beforeend', `<div class="container" id="contenedor"> <div class="cajitasFrente">
+            <img class="posters" src="${location.img}" width="157" height="202"></img>
+            <p class="titulos">${location.name}</p></div></div>`)
+        })
+    }else if(filterSelected === "vehicles"){
+        const sortedVehicle = organizarAZ(vehiculos, "name")
+        cleanContainer()
+        cleanSearch()
+        allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Vehiculos de Studio Ghibli de la A A LA z</div>`)
+        sortedVehicle.forEach(vehicle =>{ 
+            allContainer.insertAdjacentHTML('beforeend', `<div class="container" id="contenedor"> <div class="cajitasFrente">
+            <img class="posters" src="${vehicle.img}" width="157" height="202"></img>
+            <p class="titulos">${vehicle.name}</p></div></div>`)
+        })
+    }
+})
+
+// Ordenamiento AZ Movie
+btnOrdenAZ.addEventListener('click', () => {
+    const filterSelectedMovie = allContainer.getAttribute("filter")
+    console.log(filterSelectedMovie)
+    if(filterSelectedMovie === "movies"){
+        const sortedMovie = organizarAZFilm(peliculas, "title")
+        cleanContainer()
+        cleanSearch()
+        allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Peliculas de Studio Ghibli</div>`)
+        sortedMovie.forEach(pelis =>{ 
+            allContainer.insertAdjacentHTML('beforeend', `<div class="container" id="contenedor"> <div class="cajitasFrente">
+            <img class="posters" src="${pelis.poster}" width="157" height="202"></img>
+            <p class="titulos">${pelis.title}</p></div></div>`)
+        })
+    }
+})
+
+// Ordenamiento ZA characters, locations & vehicles
+btnOrdenZA.addEventListener('click', () => {
+    const filterSelectedZA = allContainer.getAttribute("filter")
+    console.log(filterSelectedZA)
+    if(filterSelectedZA === "characters"){
+        const sortedCharacterZA = organizarZA(personajes, "name")
+        cleanContainer()
+        cleanSearch()
+        allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Personajes de Studio Ghibli</div>`)
+        sortedCharacterZA.forEach(character =>{ 
+            allContainer.insertAdjacentHTML('beforeend', `<div class="container" id="contenedor"> <div class="cajitasFrente">
+            <img class="posters" src="${character.img}" width="157" height="202"></img>
+            <p class="titulos">${character.name}</p></div></div>`)
+        })
+    }else if(filterSelectedZA === "locations"){
+        const sortedLocationZA = organizarZA(lugares, "name")
+        cleanContainer()
+        cleanSearch()
+        allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Locaciones de Studio Ghibli</div>`)
+        sortedLocationZA.forEach(location =>{ 
+            allContainer.insertAdjacentHTML('beforeend', `<div class="container" id="contenedor"> <div class="cajitasFrente">
+            <img class="posters" src="${location.img}" width="157" height="202"></img>
+            <p class="titulos">${location.name}</p></div></div>`)
+        })
+    }else if(filterSelectedZA === "vehicles"){
+        const sortedVehicleZA = organizarZA(vehiculos, "name")
+        cleanContainer()
+        cleanSearch()
+        allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Vehiculos de Studio Ghibli</div>`)
+        sortedVehicleZA.forEach(vehicle =>{ 
+            allContainer.insertAdjacentHTML('beforeend', `<div class="container" id="contenedor"> <div class="cajitasFrente">
+            <img class="posters" src="${vehicle.img}" width="157" height="202"></img>
+            <p class="titulos">${vehicle.name}</p></div></div>`)
+        })
+    }
+})
+
+// Ordenamiento ZA Movie
+btnOrdenZA.addEventListener('click', () => {
+    const filterSelectedMovieZA = allContainer.getAttribute("filter")
+    console.log(filterSelectedMovieZA)
+    if(filterSelectedMovieZA === "movies"){
+        const sortedMovieZA = organizarZAFilm(peliculas, "title")
+        cleanContainer()
+        cleanSearch()
+        allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Peliculas de Studio Ghibli</div>`)
+        sortedMovieZA.forEach(pelis =>{ 
+            allContainer.insertAdjacentHTML('beforeend', `<div class="container" id="contenedor"> <div class="cajitasFrente">
+            <img class="posters" src="${pelis.poster}" width="157" height="202"></img>
+            <p class="titulos">${pelis.title}</p></div></div>`)
+        })
+    }
+})
+
+// <-----Fin ordenamientos-----
+
 // <-----Inicio mostrar peliculas-----
 data.films.forEach(film => {
     filmHTMLarr.push( `<div class="container" id="contenedor"> <div class="cajitasFrente">
@@ -191,6 +205,7 @@ data.films.forEach(film => {
 btn1.addEventListener('click', () => {
     allContainer.setAttribute("filter", "movies")
     cleanContainer()
+    cleanSearch()
     allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll">Peliculas de Studio Ghibli</div>`)
     allContainer.insertAdjacentHTML('beforeend', filmHTMLarr)})
 // <-----Fin mostrar peliculas-----
@@ -206,6 +221,7 @@ personajes.forEach(persons => {
 btn2.addEventListener('click', ()=>{
     allContainer.setAttribute("filter", "characters")
     cleanContainer() 
+    cleanSearch()
     allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Personajes de Studio Ghibli</div>`)
     allContainer.insertAdjacentHTML('beforeend',peopleHTMLarr)})
 // <-----Fin mostrar personajes-----
@@ -221,6 +237,7 @@ lugares.forEach(locaciones => {
 btn3.addEventListener('click', ()=>{
     allContainer.setAttribute("filter", "locations")
     cleanContainer() 
+    cleanSearch()
     allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Locaciones de Studio Ghibli</div>`)
     allContainer.insertAdjacentHTML('beforeend',locationHTMLarr)})
 // <-----Fin mostrar luares-----
@@ -236,6 +253,7 @@ vehiculos.forEach(vehicle => {
 btn4.addEventListener('click', ()=>{
     allContainer.setAttribute("filter", "vehicles")
     cleanContainer() 
+    cleanSearch()
     allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Vehiculos de Studio Ghibli</div>`)
     allContainer.insertAdjacentHTML('beforeend',vehicleHTMLarr)})
 // <-----Fin mostrar vehiculos-----
