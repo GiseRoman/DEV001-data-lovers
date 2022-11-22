@@ -294,8 +294,10 @@ nav{
     flex-wrap: wrap;
 }
 
-/* .container{
-} */
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
 
 
 /* <-------Inicio cara de enfrente tarjetas de info */
@@ -325,7 +327,7 @@ nav{
     z-index: 100; */
 }
 .posters {
-    display: flexbox;
+    display: flex;
     flex-direction: column;
     width:150px;
     margin-left:5px;
@@ -361,8 +363,9 @@ nav{
 }
 /* ------->Fin cara de enfrente tarjetas de info */
 /* <-------Inicio cara de atras tarjetas de info */
+
 .cajitasAtras{
-    display:inline-block;
+    display: inline-block;
     align-items: center;
     background-color: #D5BAEF;
     box-shadow: 0 5px 10px #000;
@@ -380,6 +383,7 @@ nav{
     padding: 10px;
     z-index: 90;
 }
+
 .textos{
     background-color: transparent;
     border-radius: 35px;
@@ -395,9 +399,7 @@ nav{
 }
 /* ------->Fin cara de atras tarjetas de info */
 /* ------->Fin tarjetas de info */
-.filtro{
-    display:none;
-}
+
 /* @media screen and (max-width: 768px){
     html{
         background-position: 76% 50%;

@@ -63,13 +63,38 @@
           <article id="allContainer" class="panel" filter="none">
             <div class="container">
             </div>
-            <div class="containerModal" id="modalMovies">
-            </div>
           </article>
         </section>
       </section>
 <!-- <--------Tarjetas con la informacion -->
+    <section class="containerGrafic">
+      <canvas id="grafica"></canvas>
+    </section>
     </main>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="main.js" type="module"></script>
+  <script>
+    const ctx = document.getElementById('grafica');
+  
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+  
 </html>

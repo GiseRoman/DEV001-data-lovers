@@ -19,46 +19,43 @@ const locationHTMLarr = []
 const vehicleHTMLarr = []
 let searchHTMLarr = []
 
-// <-----Inicio Mostrar/ocultar introduccion-----
+// <-----Mostrar/ocultar introduccion-----
 descripcion.insertAdjacentHTML('beforeend', `<p> Studio Ghibli was founded by manga animator, director, producer, screenwriter, author, and artist Hayao Miyazaki; Japanese film director Isao Takahata; and producer Toshio Suzuki. Takahata and Miyazaki met in the 1960s when they were both working for the Japanese animation studio Tôei Dôga. Although they collaborated for more than a decade, it was not until the mid-1980s that they decided to start their own company. In 1985, with funding from publisher Tokuma Shoten, Takahata, Miyazaki, and Suzuki founded Studio Ghibli, a production studio in suburban Tokyo.
 </p>`)
-// <-----Fin Mostrar/ocultar introduccion-----
 
-// <-----Inicio mostrar botones de ordenamiento-----
-
+// <-----Mostrar botones de ordenamiento-----
 // Botones orden AZ-ZA
 const mostrarBtnAZZA = () =>{
     btnOrdenAZ.style.display = "block"
     btnOrdenZA.style.display = "block"
 }
 
+const ocultarBtnAZZA = () =>{
+    btnOrdenAZ.style.display = "none"
+    btnOrdenZA.style.display = "none"
+}
+// Botones orden Especie
 const mostrarBtnEspecie = () => {
     btnOrdenEspecie.style.display = "block"
 }
-
 const ocultarBtnEspecie = () => {
     btnOrdenEspecie.style.display = "none"
 }
-// Botones orden Especie
 
-// <-----Fin mostrar botones de ordenamiento-----
-
-// <-----Inicio Vaciar contenedores-----
+// <-----Vaciar contenedores-----
 const cleanContainer = () => {
     allContainer.innerHTML = ''
     descripcion.innerHTML = ''
 }
-
 const cleanSearch = () => {
     buscador.value = ''
 }
-// <-----Fin Vaciar contenedores-----
 
-// <-----Inicio Buscador-----
-
+// <-----Buscador-----
 const buscar = () => {
     searchHTMLarr = []
     cleanContainer()
+    ocultarBtnAZZA()
     allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Search matches</div>`)
     const find = data.films.filter(film => film.title.toLowerCase().includes(buscador.value.toLowerCase()))
     find.forEach(encuentra => {
@@ -99,7 +96,6 @@ const buscar = () => {
         })
     })
 }
-
 buscador.addEventListener('keyup', buscar)
 btnSearch.addEventListener('click',() => {
     cleanContainer()
@@ -107,10 +103,7 @@ btnSearch.addEventListener('click',() => {
     allContainer.insertAdjacentHTML('beforeend', searchHTMLarr)
 })
 
-// <-----Fin Buscador-----
-
-
-// <-----Inicio mostrar peliculas-----
+// <-----Mostrar peliculas-----
 data.films.forEach(film => {
     filmHTMLarr.push(`<div class="container" id="contenedor"> <div class="cajitasFrente">
     <p class="titulos">${film.title}</p>
@@ -125,10 +118,10 @@ btn1.addEventListener('click', () => {
     ocultarBtnEspecie()
     mostrarBtnAZZA()
     allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll">Movies of Studio Ghibli</div>`)
-    allContainer.insertAdjacentHTML('beforeend', filmHTMLarr)})
-// <-----Fin mostrar peliculas-----
+    allContainer.insertAdjacentHTML('beforeend', filmHTMLarr)
+})
 
-// <-----Inicio mostrar personajes-----
+// <-----Mostrar personajes-----
 personajes.forEach(persons => {
     persons.forEach(person => {
     peopleHTMLarr.push(`<div class="container" id="contenedor"> <div class="cajitasFrente">
@@ -136,7 +129,8 @@ personajes.forEach(persons => {
     <img class="posters" src="${person.img}" width="157" height="202"></img>
     <button class="botonModal" id="boton">Saber mas...</button>
     </div></div>`)
-})})
+})
+})
 btn2.addEventListener('click', ()=>{
     allContainer.setAttribute("filter", "characters")
     cleanContainer() 
@@ -144,10 +138,11 @@ btn2.addEventListener('click', ()=>{
     mostrarBtnAZZA()
     mostrarBtnEspecie()
     allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Characters of Studio Ghibli</div>`)
-    allContainer.insertAdjacentHTML('beforeend',peopleHTMLarr)})
-// <-----Fin mostrar personajes-----
+    allContainer.insertAdjacentHTML('beforeend',peopleHTMLarr)
+})
 
-// <-----Inicio mostrar lugares-----
+
+// <-----Mostrar lugares-----
 lugares.forEach(locaciones => {
     locaciones.forEach(locacion =>{
     locationHTMLarr.push(`<div class="container" id="contenedor"> <div class="cajitasFrente">
@@ -155,7 +150,8 @@ lugares.forEach(locaciones => {
     <img class="posters" src="${locacion.img}" width="157" height="202"></img>
     <button class="botonModal" id="boton">Saber mas...</button>
     </div></div>`)
-})})
+})
+})
 btn3.addEventListener('click', ()=>{
     allContainer.setAttribute("filter", "locations")
     cleanContainer() 
@@ -163,10 +159,10 @@ btn3.addEventListener('click', ()=>{
     ocultarBtnEspecie()
     mostrarBtnAZZA()
     allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Locations of Studio Ghibli</div>`)
-    allContainer.insertAdjacentHTML('beforeend',locationHTMLarr)})
-// <-----Fin mostrar luares-----
+    allContainer.insertAdjacentHTML('beforeend',locationHTMLarr)
+})
 
-// <-----Inicio mostrar vehiculos-----
+// <-----Mostrar vehiculos-----
 vehiculos.forEach(vehicle => {
     vehicle.forEach(vehiculo => {
     vehicleHTMLarr.push(`<div class="container" id="contenedor"> <div class="cajitasFrente">
@@ -174,7 +170,8 @@ vehiculos.forEach(vehicle => {
     <img class="posters" src="${vehiculo.img}" width="157" height="202"></img>
     <button class="botonModal" id="boton">Saber mas...</button>
     </div></div>`)
-})})
+})
+})
 btn4.addEventListener('click', ()=>{
     allContainer.setAttribute("filter", "vehicles")
     cleanContainer() 
@@ -182,10 +179,10 @@ btn4.addEventListener('click', ()=>{
     ocultarBtnEspecie()
     mostrarBtnAZZA()
     allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Vehicles of Studio Ghibli</div>`)
-    allContainer.insertAdjacentHTML('beforeend',vehicleHTMLarr)})
-// <-----Fin mostrar vehiculos-----
+    allContainer.insertAdjacentHTML('beforeend',vehicleHTMLarr)
+})
 
-// <-----Inicio ordenamientos-----
+// <-----Ordenamientos-----
 // Ordenamiento AZ characters, locations & vehicles
 btnOrdenAZ.addEventListener('click', () => {
     const filterSelected = allContainer.getAttribute("filter")
@@ -325,5 +322,4 @@ btnOrdenEspecie.addEventListener('click', () => {
     }
 })
 
-
-// <-----Fin ordenamientos-----
+// <-----Gráficas-----

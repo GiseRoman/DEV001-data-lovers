@@ -5,6 +5,7 @@ export const personajes = data.films.map(film => film.people)
 export const lugares = data.films.map(film => film.locations)
 export const vehiculos = data.films.map(film => film.vehicles)
 export const peliculas = data.films
+export const score = data.films.map(film => film.rt_score)
 
 export const organizarAZ = (array) => {
     return array.flat().sort(function (a, b) {
