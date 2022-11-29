@@ -1,4 +1,24 @@
 # Data Lovers
+Historias de Usuario
+![historias de usuario](https://user-images.githubusercontent.com/114018501/204442276-10fc650b-959a-40b4-9972-e62b2391f62c.JPG)
+
+Prototipo de Baja fidelidad
+![jh](https://user-images.githubusercontent.com/114018501/204443918-4f7f9d2c-48de-4d21-a1ea-d5e890916aee.JPG)
+![af1](https://user-images.githubusercontent.com/114018501/204443934-cd155580-cfbf-4d7b-9f3b-1799add26216.JPG)
+
+Prototipo de Alta fidelidad
+![af1](https://user-images.githubusercontent.com/114018501/204443368-0a970e29-e7a7-4677-b206-fa113f8bb3b9.JPG)
+![jh](https://user-images.githubusercontent.com/114018501/204443563-82c82f86-7da7-46e9-a99d-04378701ecce.JPG)
+![af1](https://user-images.githubusercontent.com/114018501/204443577-847326a9-15f4-40bd-b911-849f8affb14c.JPG)
+
+
+
+
+
+
+
+
+
 
 ## Índice 
 
