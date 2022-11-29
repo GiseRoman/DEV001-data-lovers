@@ -9,7 +9,34 @@ Prototipo de Baja fidelidad
 Prototipo de Alta fidelidad
 ![af1](https://user-images.githubusercontent.com/114018501/204443368-0a970e29-e7a7-4677-b206-fa113f8bb3b9.JPG)
 ![jh](https://user-images.githubusercontent.com/114018501/204443563-82c82f86-7da7-46e9-a99d-04378701ecce.JPG)
-![af1](https://user-images.githubusercontent.com/114018501/204443577-847326a9-15f4-40bd-b911-849f8affb14c.JPG)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+
+
+
 
 
 
