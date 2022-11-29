@@ -3,8 +3,8 @@ Historias de Usuario
 ![historias de usuario](https://user-images.githubusercontent.com/114018501/204442276-10fc650b-959a-40b4-9972-e62b2391f62c.JPG)
 
 Prototipo de Baja fidelidad
-![jh](https://user-images.githubusercontent.com/114018501/204443918-4f7f9d2c-48de-4d21-a1ea-d5e890916aee.JPG)
-![af1](https://user-images.githubusercontent.com/114018501/204443934-cd155580-cfbf-4d7b-9f3b-1799add26216.JPG)
+![bfs](https://user-images.githubusercontent.com/114018501/204444262-b086d704-171a-448d-a1c2-8f2fad3ed569.JPG)
+![bfs1](https://user-images.githubusercontent.com/114018501/204444266-b966f776-56e2-42db-9801-a6c6d64f7df9.JPG)
 
 Prototipo de Alta fidelidad
 ![af1](https://user-images.githubusercontent.com/114018501/204443368-0a970e29-e7a7-4677-b206-fa113f8bb3b9.JPG)
