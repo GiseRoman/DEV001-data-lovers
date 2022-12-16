@@ -1,8 +1,4 @@
 # Data Lovers
-La pagina web permite visualizar la data de los films de Studio Ghibli, filtrada y ordenada por personajes, locaciones y vehiculos.
-
-Historias de Usuario
-![historias de usuario](https://user-images.githubusercontent.com/114018501/204442276-10fc650b-959a-40b4-9972-e62b2391f62c.JPG)
 
 * [1. Introducción](#1-introducción)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
@@ -15,7 +11,7 @@ Historias de Usuario
 * [9. Para considerar Project Feedback](#9-para-considerar-project-feedback)
 ## 1. Introducción
 
-    A raíz de la curiosidad de nuestros corazones amantes de la animación, hemos creado una pagina
+  A raíz de la curiosidad de nuestros corazones amantes de la animación, hemos creado una pagina
   cuya función radica en alimentar la curiosidad y ampliar el conocimiento sobre las bellas 
   obras de arte que han visto la luz gracias a uno de los más grandes estudios de animación 
   japonesa: Studio Ghibli.
