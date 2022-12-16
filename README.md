@@ -1,6 +1,8 @@
 # Data Lovers
+La pagina web permite visualizar la data de los films de Studio Ghibli, filtrada y ordenada por personajes, locaciones y vehiculos.
 
-## Índice 
+Historias de Usuario
+![historias de usuario](https://user-images.githubusercontent.com/114018501/204442276-10fc650b-959a-40b4-9972-e62b2391f62c.JPG)
 
 * [1. Introducción](#1-introducción)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
@@ -13,7 +15,9 @@
 * [9. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
 * [10. Para considerar Project Feedback](#9-para-considerar-project-feedback)
 
-***
+Prototipo de Alta fidelidad
+![af1](https://user-images.githubusercontent.com/114018501/204443368-0a970e29-e7a7-4677-b206-fa113f8bb3b9.JPG)
+![jh](https://user-images.githubusercontent.com/114018501/204443563-82c82f86-7da7-46e9-a99d-04378701ecce.JPG)
 
 ## 1. Introducción
 
