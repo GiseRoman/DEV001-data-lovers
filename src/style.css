@@ -9,7 +9,7 @@ html{
     height: 100%;
     margin: 0;
     font-family: 'Fuzzy Bubbles', cursive;
-    background-image: url("./img/theBackground.jpg");
+    background-image: url("./img/fondoSG.svg");
     background-position: top;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -196,6 +196,7 @@ nav{
     align-items: center;
     justify-content: center;
 }
+
 .animateButton{
     margin-left: 20px;
     margin-right: 20px;
@@ -204,6 +205,7 @@ nav{
     align-items: center;
     justify-content: flex-start;
 }
+
 .button{
     display: block;
     position: relative;
@@ -230,8 +232,8 @@ nav{
         background-position: 165% 6%;
         background-size: 150%;
         font-size: 28px;
-        color: #150C1C;
-        -webkit-text-stroke: .025rem #D5BAEF;
+        /* color: #150C1C;
+        -webkit-text-stroke: .025rem #D5BAEF; */
     }
 
 .buttonOrden{
@@ -259,8 +261,8 @@ nav{
         background-position: 142% 5%;
         background-size: 164%;
         font-size: 28px;
-        color: #150C1C;
-        -webkit-text-stroke: .025rem #D5BAEF;
+        /* color: #150C1C;
+        -webkit-text-stroke: .025rem #D5BAEF; */
     }
 
 .titulosAll{
@@ -396,6 +398,25 @@ nav{
     margin-left: -4px;
     padding-top: 10px;
     font-weight: bold;
+}
+
+footer{
+    display: flexbox;
+    justify-content: center;
+    width: 100%;
+    height: 3rem;
+    background-color: #d5baef9f;
+}
+
+.textos2{
+    display: flexbox;
+    justify-content: center;
+    background-color: transparent;
+    color: #E7E7FF;
+    text-align: center;
+    font-size: justify;
+    font-weight: bold;
+    z-index: 99;
 }
 /* ------->Fin cara de atras tarjetas de info */
 /* ------->Fin tarjetas de info */

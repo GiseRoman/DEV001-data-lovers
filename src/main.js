@@ -56,7 +56,7 @@ const buscar = () => {
     searchHTMLarr = []
     cleanContainer()
     ocultarBtnAZZA()
-    allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Search matches</div>`)
+    allContainer.insertAdjacentHTML('beforeend', `<div class="titulosAll" >Search</div>`)
     const find = data.films.filter(film => film.title.toLowerCase().includes(buscador.value.toLowerCase()))
     find.forEach(encuentra => {
         searchHTMLarr.push(`<div class="container" id="contenedor"> <div class="cajitasFrente">
