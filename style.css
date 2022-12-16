@@ -1,0 +1,551 @@
+*{
+    padding: 0;
+    margin: 0;
+    scrollbar-width: thin;
+    scrollbar-color: #22045aee #120c35c2;
+    
+}
+html{
+    height: 100%;
+    margin: 0;
+    font-family: 'Fuzzy Bubbles', cursive;
+    background-image: url("./img/fondoSG.svg");
+    background-position: top;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: #150C1C;
+    background-attachment: fixed;
+    @media (max-width: (20rem * 1.6)){
+        font-size: 12px
+    }
+}
+/* <-------Inicio Scroll Bar color y diseño Chrome, Edge y Safari */
+body::-webkit-scrollbar{
+    width: 10px;
+}
+body::-webkit-scrollbar-track{
+    background: #120c35c2;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #22045aee;
+    border-radius: 35px;
+}
+/* ------->Fin Scroll Bar color y diseño Chrome, Edge y Safari */
+
+#ordenAZ, #ordenZA, #ordenEspecie{
+    display: none;
+}
+
+.coincidencias{
+    display: none;
+}
+
+p{
+    display: inline-block;
+    padding: 5px 5px;
+    margin-top: 10px;
+    margin-left: 5px;
+    width: 800px;
+    height: 300;
+    font-size: 30;
+    font-family: 'Fuzzy Bubbles', cursive;
+    background-color: #150c1c85;
+    color: #E7E7FF;
+    border-radius: 10px;
+    text-align: center;
+}
+.menu{
+    max-width: 40px;
+    margin-right: 15px;
+}
+/* -------<Inicio nav */
+nav{
+    height: 8%;
+    width: 100%;
+    background-color:#d3d2ffaf;
+    justify-content: flex-start;
+    color: #000;
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 25px;
+    padding-left: 1px;
+    padding-right: 1px;
+    position: fixed;
+    z-index: 100;
+    @media (max-width: (20rem * 1.6)){
+        max-height: 200px;
+    }
+}
+.logo{
+    width: 8%;
+    padding-top: 8px;
+    padding-left: 5px;
+    background-color: transparent;
+    color:rgb(0, 0, 0);
+    text-align: left;
+    font-weight: bold;
+    border-radius: 15px;
+    opacity: 70%;
+}
+/* ------->Fin nav */
+#ghibli{
+    margin-top: 60px;
+    width: 250px;
+    height: 150px;
+    margin-left: 40%;
+    margin-right: 20px;
+    background-color:#e7e7ff62;
+    border-radius: 45px;
+    border-color: transparent;
+    justify-content: center;
+}
+#descripcion{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-left: 20%;
+}
+.buscadorTarjetas{
+    display: flex;
+    padding-left: .8%;
+    border-radius: 10px;
+    margin-left: 30%;
+    margin-top: -3.5%;
+    width: 30%;
+    height: 2rem;
+    background-color: #d5baefaf;
+    border-color: #22045aee;
+    color: #150C1C;
+    font-size: 18px;
+}
+.botonBuscador{
+    display: flex;
+    border-radius: 15px;
+    background-color: #22045aaf;
+    color: #E7E7FF;
+    width: 5rem;
+    height: 2rem;
+    font-family: 'Fuzzy Bubbles', cursive;
+    text-align: center;
+    font-size: 18px;
+    padding-left: .4rem;
+    padding-top: .3rem;
+    margin-left: 62%;
+    margin-top: -3.3%;
+}
+.botonBuscador:hover{
+    box-shadow: 0px .3rem .3rem rgba(0,0,0,.75);
+    background-color: #d5baefaf;
+    /* font-weight: bold; */
+    color: #22045aee;
+}
+
+.botonModal{
+    display: flex;
+    border-radius: 15px;
+    background-color: #22045aaf;
+    color: #E7E7FF;
+    width: 8rem;
+    height: 2rem;
+    font-family: 'Fuzzy Bubbles', cursive;
+    text-align: center;
+    font-size: 18px;
+    padding-left: .4rem;
+    padding-top: .3rem;
+    margin-left: 13%;
+    margin-top: 2%;
+    box-shadow: 0 5px 10px #000;
+}
+.botonModal:hover{
+    box-shadow: 0px .3rem .3rem rgba(0,0,0,.75);
+    background-color: #d5baefaf;
+    /* font-weight: bold; */
+    color: #22045aee;
+}
+
+#buttonsMovie{
+    margin-top: -3rem;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#buttonsCharacter{
+    margin-top: -3rem;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#buttonsLocation{
+    margin-top: -3rem;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#buttonsVehicle{
+    margin-top: -3rem;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.buttons{
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.animateButton{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.button{
+    display: block;
+    position: relative;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 10rem;
+    height: 4.5rem;
+    margin-bottom: 1rem;
+    background: url(./img/startotoro.png) no-repeat 50% 90% ;
+    background-size: 350%;
+    background-color: #d9d9d956;
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+    color: #E7E7FF;
+    font-weight: bold;
+    border-radius: 10%;
+    transition: all .5s cubic-bezier(.55, 0,.1,1);
+    box-shadow: 0px .5re, 1rem rgba(0,0,0,.75);
+}
+    .button:hover{
+        box-shadow: 0px .5rem 2rem rgba(0,0,0,.75);
+        background-position: 165% 6%;
+        background-size: 150%;
+        font-size: 28px;
+        /* color: #150C1C;
+        -webkit-text-stroke: .025rem #D5BAEF; */
+    }
+
+.buttonOrden{
+    display: block;
+    margin-top: 3rem;
+    position: relative;
+    cursor: pointer;
+    width: 9rem;
+    height: 4.5rem;
+    background: url(./img/startotoro.png) no-repeat 50% 90% ;
+    background-size: 350%;
+    background-color: #d9d9d956;
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+    color: #E7E7FF;
+    font-weight: bold;
+    border-radius: 10%;
+    transition: all .5s cubic-bezier(.55, 0,.1,1);
+    box-shadow: 0px .5re, 1rem rgba(0,0,0,.75);
+}
+    .buttonOrden:hover{
+        box-shadow: 0px .5rem 2rem rgba(0,0,0,.75);
+        background-position: 142% 5%;
+        background-size: 164%;
+        font-size: 28px;
+        /* color: #150C1C;
+        -webkit-text-stroke: .025rem #D5BAEF; */
+    }
+
+.titulosAll{
+    display: flex;
+    width: 90%;
+    height: 4rem;
+    margin-left: 7%;
+    padding-top: 1%;
+    padding-left: 2%;
+    color: #D5BAEF;
+    font-size: 45px;
+    text-align: center;
+    background-color: #311d41bd;
+    border-radius: 40px;
+    justify-content: center;
+}
+
+/* <-------Inicio tarjetas de info */
+.fondoTarjetas{
+    /* background-color: #150c1ce0; */
+    background-size: 100% 100%;
+    margin-top: 1%;
+}
+.tarjetas{
+    max-width: 1200px;
+    padding: 20px;
+    padding-bottom: 40px;
+    margin: auto;
+    margin-top: 1px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* <-------Inicio cara de enfrente tarjetas de info */
+.panel{
+    display: flex;
+    flex-wrap: wrap;
+}
+.cajitasFrente{
+    /* display:inline-block; */
+    /* align-items: center; */
+    display: flexbox;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #D5BAEF;
+    box-shadow: 0 5px 10px #000;
+    border-radius: 35px;
+    width: 177px;
+    height: auto;
+    margin-left: 2rem ;
+    margin-right: 1rem;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: .1rem;
+    /* position: relative;
+    z-index: 100; */
+}
+.posters {
+    display: flex;
+    flex-direction: column;
+    width:150px;
+    margin-left:5px;
+    margin-right: 5px;
+    margin-top: 2px;
+    margin-bottom: -3px;
+    padding:5px;
+    font-size:italic;
+    background-color:#D5BAEF;
+    box-shadow: 0 5px 10px #000;
+    border-radius: 35px;
+    color:#000;
+    width: 157px;
+    height: 202px;
+}
+.titulos{
+    display: flexbox;
+    flex-direction: column;
+    background-color: #76C7F5; 
+    border-radius: 35px;
+    box-shadow: 0 5px 10px #000;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    width: 177px;
+    height: auto;
+    font-size: justify;
+    text-align: center;
+    margin-top: 0px;
+    margin-left: -4px;
+    margin-bottom: .1rem;
+    padding-top: 5px;
+    font-weight: bold;
+}
+/* ------->Fin cara de enfrente tarjetas de info */
+/* <-------Inicio cara de atras tarjetas de info */
+
+.cajitasAtras{
+    display: inline-block;
+    align-items: center;
+    background-color: #D5BAEF;
+    box-shadow: 0 5px 10px #000;
+    border-radius: 45px;
+    width: 377px;
+    height: auto;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    margin-left: 25px ;
+    margin-right: 25px;
+    margin-top: 30px;
+    margin-bottom: 60px;
+    padding: 10px;
+    z-index: 90;
+}
+
+.textos{
+    background-color: transparent;
+    border-radius: 35px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    width: 377px;
+    height: auto;
+    font-size: justify;
+    margin-top: -8px;
+    margin-left: -4px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+footer{
+    display: flexbox;
+    justify-content: center;
+    width: 100%;
+    height: 3rem;
+    background-color: #d5baef9f;
+}
+
+.textos2{
+    display: flexbox;
+    justify-content: center;
+    background-color: transparent;
+    color: #E7E7FF;
+    text-align: center;
+    font-size: justify;
+    font-weight: bold;
+    z-index: 99;
+}
+/* ------->Fin cara de atras tarjetas de info */
+/* ------->Fin tarjetas de info */
+
+/* @media screen and (max-width: 768px){
+    html{
+        background-position: 76% 50%;
+        background-size: 150%;
+    }
+    
+    /* -------<Inicio nav */
+    /* nav{
+        height: 10%;
+        justify-content: flex-start;
+        padding-left: 1px;
+        padding-right: 1px;
+        z-index: 100;
+    }
+    
+    .logo{
+        width: 18%;
+        padding-top: 5px;
+        padding-left: 5px;
+    } */ 
+    
+    /* p{
+        padding: 5px 5px;
+        margin-top: 10px;
+        margin-left: 5px;
+        width: 500px;
+        height: 300;
+        font-size: 10;
+        background-color: #150c1c85;
+        color: #E7E7FF;
+        border-radius: 10px;
+        text-align: center;
+    } */
+
+    /* .menu{
+        max-height: 100%;
+        padding-top: 5%;
+        max-width: 5rem;
+        margin-right: 2%;
+    } */
+    /* ------->Fin nav */
+    
+    /* #ghibli{
+        margin-top: 9%;
+    }
+    
+    .animateButton{
+        margin-left: .9%;
+        margin-right: .9%;
+    }
+    
+    .button{
+        width: 9rem;
+        height: 9rem;
+        font-size: 25px;
+    }
+        .button:hover{
+            font-size: 25px;
+        } */
+    
+    /* <-------Inicio tarjetas de info */
+    
+    /* .fondoTarjetas{
+        background-color: #150c1ce0;
+        background-size: 100% 100%;
+        margin-top: 1%;
+    } */
+/* <-------Inicio cara de enfrente tarjetas de info */
+    /* .panel{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .cajitasFrente{
+        width: 157px;
+        height: 262px;
+        margin-left: 10%;
+        margin-right: 13.5px;
+    }
+    .posters {
+        width: 137px;
+        height: 202px;
+    }
+    
+    .titulos{
+        width: 147px;
+        height: 41px;
+        font-size: 100%;
+    } */
+    /* ------->Fin cara de enfrente tarjetas de info */
+    
+    /* <-------Inicio cara de atras tarjetas de info */
+    /* .cajitasAtras{
+        display:inline-block;
+        align-items: center;
+        background-color: #D5BAEF;
+        box-shadow: 0 5px 10px #000;
+        border-radius: 45px;
+        width: 377px;
+        height: auto;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        top: 0;
+        margin-left: 25px ;
+        margin-right: 25px;
+        margin-top: 30px;
+        margin-bottom: 60px;
+        padding: 10px;
+        z-index: 90;
+    }
+    
+    .textos{
+        background-color: transparent;
+        border-radius: 35px;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        width: 377px;
+        height: auto;
+        font-size: justify;
+        margin-top: -8px;
+        margin-left: -4px;
+        padding-top: 10px;
+        font-weight: bold;
+    } */
+    /* ------->Fin cara de atras tarjetas de info */
+    /* ------->Fin tarjetas de info */
+/* } */
+
