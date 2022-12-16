@@ -26,9 +26,9 @@ filtrarla y ordenarla.
 
 ## 3. Historias de usuario
 
-![Uh](https://i.postimg.cc/xJY5BRpH/UH.png)
+![Uh](https://i.postimg.cc/vBxKg2WP/UH.png)
 
-**Definición de Terminado. Edita/agrega de acuerdo a tu implementación exactamente**
+**Definición de Terminado.**
 
 >* Todo el código está en la rama principal/main del repositorio.
 >* La página está publicada en Github Pages y es accesible mediante un enlace/link/liga.
@@ -49,11 +49,11 @@ filtrarla y ordenarla.
 
 ## 5. Prototipo de alta fidelidad
 
-![af1](https://i.postimg.cc/87JZvsrF/AF1.png)
+![af1](https://i.postimg.cc/sgKqthjJ/AF1.png)
 
-![af2](https://i.postimg.cc/1gDMWTBs/AF2.png)
+![af2](https://i.postimg.cc/rpPbp2t0/AF2.png)
 
-![af3](https://i.postimg.cc/qhLwr3WF/AF3.png)
+![af3](https://i.postimg.cc/PJGRmbyd/AF3.png)
 
 ## 6. Github page
 
